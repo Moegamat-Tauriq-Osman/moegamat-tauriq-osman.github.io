@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    background: url("wp9315285.jpg") no-repeat center center/cover;
+    
+    
+}
+
+.name-tag {
+    position: relative;
+    top: 20px;
+    left: 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00ffaa;
+}
+
+header {
+    text-align: center;
+    padding: 50px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.portfolio-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(15, 15, 15, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background: rgba(0, 255, 170, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #00ffaa;
+}
+
+.portfolio-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio-info h3 {
+    color: #00ffaa;
+}
+
+.portfolio-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #00ffaa;
+    color: #0f0f0f;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.portfolio-button:hover {
+    background: #ffffff;
+    color: #000;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(15, 15, 15, 0.85);
+    border-top: 3px solid #00ffaa;
+}
+
+.footer p {
+    font-size: 1.2rem;
+    color: #cccccc;
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social-icons a {
+    color: #00ffaa;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    transform: scale(1.15);
+    color: #ffffff;
+}

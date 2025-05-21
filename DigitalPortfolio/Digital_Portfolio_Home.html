@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moegamat Tauriq Osman (Digital Portfolio)</title>
+  <link rel="stylesheet" href="Digital Portfolio.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="Digital_Portfolio_About.html">About</a>
+      <a href="Digital_Portfolio_Resume.html">Resume</a>
+      <a href="Digital_Portfolio_Projects.html">Portfolio</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Moegamat Tauriq Osman</h1>
+      <p class="tagline">I'm a <span class="typed-text"></span><span class="cursor">|</span></p>
+
+      <div class="social-icons">
+        <a href="mailto:moegamattauriqosman@gmail.com"> <i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Moegamat-Tauriq-Osman" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/moegamat-tauriq-osman-1b5438300/" target="_blank"><i
+            class="fab fa-linkedin"></i></a>
+      </div>
+
+      <a href="Digital_Portfolio_About.html" class="cta-button">Learn more about me</a>
+    </div>
+  </div>
+
+  <script>
+    const typedTextSpan = document.querySelector(".typed-text");
+    const cursorSpan = document.querySelector(".cursor");
+
+    const textArray = ["Student", "UI Designer", "Web Developer", "Software Developer"];
+    const typingDelay = 100;
+    const erasingDelay = 60;
+    const newTextDelay = 1500;
+    let textArrayIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else {
+        setTimeout(erase, newTextDelay);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } else {
+        textArrayIndex = (textArrayIndex + 1) % textArray.length;
+        setTimeout(type, typingDelay + 300);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (textArray.length) setTimeout(type, newTextDelay);
+    });
+  </script>
+</body>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>Code. Create. Conquer.One line at a time.</p>
+    <div class="footer-social-icons">
+      <a href="mailto:moegamattauriqosman@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/Moegamat-Tauriq-Osman" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/moegamat-tauriq-osman-1b5438300/" target="_blank"><i
+          class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/27795716536" target="_blank"><i class="bi bi-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2025 Moegamat Tauriq Osman. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</html>
