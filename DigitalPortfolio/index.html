@@ -4,59 +4,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moegamat Tauriq Osman (Digital Portfolio)</title>
-  <link rel="stylesheet" href="Digital Portfolio.css" />
+  <title>Moegamat Tauriq Osman | Digital Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+  <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
-    <div class="nav-links">
-      <a href="Digital_Portfolio_About.html">About</a>
-      <a href="Digital_Portfolio_Resume.html">Resume</a>
-      <a href="Digital_Portfolio_Projects.html">Portfolio</a>
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">Moegamat Tauriq Osman</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </nav>
 
-  <div class="hero">
+  <!-- ===== HERO / BANNER ===== -->
+  <section id="home" class="hero">
     <div class="hero-content">
+      <img src="IMG-20230819-WA0018.jpg" alt="Profile Photo" class="hero-photo" />
       <h1>Moegamat Tauriq Osman</h1>
       <p class="tagline">I'm a <span class="typed-text"></span><span class="cursor">|</span></p>
 
       <div class="social-icons">
-        <a href="mailto:moegamattauriqosman@gmail.com"> <i class="fas fa-envelope"></i></a>
+        <a href="mailto:moegamattauriqosman@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="https://github.com/Moegamat-Tauriq-Osman" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/moegamat-tauriq-osman-1b5438300/" target="_blank"><i
-            class="fab fa-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/moegamat-tauriq-osman-1b5438300/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <a href="#about" class="cta-button">Learn more about me</a>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about-section">
+    <h2>About Me</h2>
+    <div class="about-grid">
+      <div class="about-info">
+        <p>
+          I'm <strong>Moegamat Tauriq Osman</strong>, a third-year student studying Applications Development at
+          Cape Peninsula University of Technology (CPUT).
+          Passionate about technology, coding, and creative design — I constantly explore how software can solve real-world problems.
+        </p>
+        <p><b>This is my journey — and I'm just getting started.</b></p>
+        <ul>
+          <li>📍 Cape Town, South Africa</li>
+          <li>📧 <a href="mailto:moegamattauriqosman@gmail.com">moegamattauriqosman@gmail.com</a></li>
+          <li>📞 061 702 8883</li>
+        </ul>
       </div>
 
-      <a href="Digital_Portfolio_About.html" class="cta-button">Learn more about me</a>
+      <div class="skills">
+        <h3>Technical Skills</h3>
+        <div class="skills-grid">
+          <span><i class="fab fa-html5"></i> HTML</span>
+          <span><i class="fab fa-css3-alt"></i> CSS</span>
+          <span><i class="fab fa-js"></i> JavaScript</span>
+          <span><i class="fab fa-java"></i> Java</span>
+          <span><i class="fas fa-database"></i> SQL/MySQL</span>
+          <span><i class="fab fa-php"></i> PHP</span>
+          <span><i class="fab fa-figma"></i> UI/UX Design</span>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- ===== RESUME SECTION ===== -->
+  <section id="resume" class="resume-section">
+    <h2>Resume</h2>
+    <div class="resume-content">
+      <div class="resume-box">
+        <h3>Summary</h3>
+        <p>
+          Information Technology student at CPUT with experience in front-end and back-end development.
+          Proficient in HTML, CSS, JS, PHP, Java, SQL, and MySQL.
+        </p>
+        <a href="CV.pdf" class="resume-button" target="_blank">View my CV</a>
+      </div>
+
+      <div class="resume-box">
+        <h3>Education</h3>
+        <ul>
+          <li><strong>Diploma in Applications Development</strong> — CPUT (2023 - Current)</li>
+          <li><strong>National Senior Certificate</strong> — Trafalgar High School (2022)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO SECTION ===== -->
+  <section id="portfolio" class="portfolio-section">
+    <h2>Portfolio</h2>
+    <p>Here are some of my featured projects:</p>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="AmberAlert.png" alt="Amber Alert Project">
+        <h3>Amber Alert (Group Project)</h3>
+        <p>A web application for reporting missing children, accidents, and crimes with real-time updates.</p>
+        <a href="https://github.com/Moegamat-Tauriq-Osman/amber-alert-RM3" target="_blank" class="portfolio-button">View Project</a>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="Screenshot 2025-09-12 100225.png" alt="Hire A Helper">
+        <h3>Hire A Helper (Group Project)</h3>
+        <p>A Java + React app that connects clients with nearby service providers.</p>
+        <a href="https://github.com/Moegamat-Tauriq-Osman/HireAHelper" target="_blank" class="portfolio-button">View Project</a>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="wp9315286.png" alt="Paw Point">
+        <h3>Paw Point</h3>
+        <p>A booking system tailored for feline owners to manage pet services.</p>
+        <a href="https://github.com/Moegamat-Tauriq-Osman/paw-point" target="_blank" class="portfolio-button">View Project</a>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="task.jpg" alt="Task Management App">
+        <h3>Task Management</h3>
+        <p>A system to assign, monitor, and manage organizational tasks efficiently.</p>
+        <a href="https://github.com/Moegamat-Tauriq-Osman/Task-Management-App" target="_blank" class="portfolio-button">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / FOOTER ===== -->
+  <footer id="contact" class="footer">
+    <div class="footer-container">
+      <p>Code. Create. Conquer. One line at a time.</p>
+      <div class="footer-social-icons">
+        <a href="mailto:moegamattauriqosman@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Moegamat-Tauriq-Osman" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/moegamat-tauriq-osman-1b5438300/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p>&copy; 2025 Moegamat Tauriq Osman. All Rights Reserved.</p>
+    </div>
+  </footer>
 
   <script>
+    // Typing effect
     const typedTextSpan = document.querySelector(".typed-text");
     const cursorSpan = document.querySelector(".cursor");
-
     const textArray = ["Student", "UI Designer", "Web Developer", "Software Developer"];
-    const typingDelay = 100;
-    const erasingDelay = 60;
-    const newTextDelay = 1500;
-    let textArrayIndex = 0;
-    let charIndex = 0;
+    const typingDelay = 100, erasingDelay = 60, newTextDelay = 1500;
+    let textArrayIndex = 0, charIndex = 0;
 
     function type() {
       if (charIndex < textArray[textArrayIndex].length) {
         typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
         charIndex++;
         setTimeout(type, typingDelay);
-      } else {
-        setTimeout(erase, newTextDelay);
-      }
+      } else setTimeout(erase, newTextDelay);
     }
-
     function erase() {
       if (charIndex > 0) {
         typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
@@ -67,24 +171,10 @@
         setTimeout(type, typingDelay + 300);
       }
     }
-
     document.addEventListener("DOMContentLoaded", () => {
       if (textArray.length) setTimeout(type, newTextDelay);
     });
   </script>
+
 </body>
-
-<footer class="footer">
-  <div class="footer-container">
-    <p>Code. Create. Conquer.One line at a time.</p>
-    <div class="footer-social-icons">
-      <a href="mailto:moegamattauriqosman@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/Moegamat-Tauriq-Osman" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/moegamattauriqosman/" target="_blank"><i
-          class="fab fa-linkedin"></i></a>
-    </div>
-    <p>&copy; 2025 Moegamat Tauriq Osman. All Rights Reserved.</p>
-  </div>
-</footer>
-
 </html>
