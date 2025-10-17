@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moegamat Tauriq Osman | Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+
+  <style>
+    :root{
+  --blue-100: #e9f3ff;
+  --blue-200: #d0e3ff;
+  --blue-300: #b8d4ff;
+  --blue-500: #74b3f0;
+  --navy-900: #0d1b2a;
+  --navy-700: #1b263b;
+  --navy-500: #415a77;
+  --accent: #64b5f6;
+  --muted: #5a6b82;
+}
+
+/* RESET */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#f8faff; /* simple light background */
+  color:var(--navy-900);
+  scroll-behavior:smooth;
+}
+
+/* LINKS */
+a{color:inherit;text-decoration:none;position:relative;}
+
+/* HEADER */
+header {
+  background: 
+    linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.75)), /* dark overlay for readability */
+    url("wp9315285.jpg") center/cover no-repeat;  /* your image */
+  color: var(--blue-100);
+  padding: 100px 20px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 10%,rgba(116,179,240,0.05),transparent 60%);
+  animation:none; /* remove pulsing */
+}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* HERO */
+.hero{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;}
+.avatar{
+  width:200px;
+  height:200px;
+  border-radius:12px; /* makes it a square with slight rounded corners */
+  overflow:hidden;
+  border:4px solid var(--blue-500);
+  box-shadow:0 0 25px rgba(116,179,240,0.6);
+  flex:0 0 200px;
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+.hero-text{max-width:740px;text-align:center}
+.hero-text h1{font-size:2.6rem;margin:0 0 10px;text-shadow:none;}
+.hero-text p.lead{margin:0;color:var(--blue-200);opacity:0.95;font-size:1.1rem;}
+
+/* NAVIGATION */
+nav{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.nav-link{
+  color:var(--blue-100);
+  padding:8px 16px;
+  font-weight:600;
+  position:relative;
+  overflow:hidden;
+}
+.nav-link::after {
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  width:0%;
+  height:2px;
+  background:var(--accent);
+  transition:all .3s;
+  transform:translateX(-50%);
+}
+.nav-link:hover::after{width:60%}
+
+/* SECTIONS */
+section{padding:56px 20px;position:relative;overflow:hidden;background:#f8faff;}
+section.alt{background:#ffffff;} /* alternate sections white */
+
+/* HEADINGS & TEXT */
+h2{font-size:1.7rem;margin:0 0 16px;text-align: center}
+p.lead-small{color:var(--muted);margin:0 auto;max-width:760px;text-align:center;line-height:1.6;}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;padding:12px 22px;border-radius:28px;
+  background:linear-gradient(135deg,var(--accent),#4fa3ff);
+  color:#fff;font-weight:700;
+  box-shadow:0 0 20px rgba(116,179,240,0.4);
+  transition:all .25s ease;
+}
+.btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 0 35px rgba(116,179,240,0.6)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;margin-top:24px}
+.skill-card{
+  background:#ffffff;
+  padding:20px;border-radius:16px;
+  box-shadow:0 8px 20px rgba(13,27,42,0.1);
+  text-align:center;cursor:pointer;
+  transition:transform .22s, box-shadow .22s;
+  position:relative;overflow:hidden;
+}
+.skill-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 16px 40px rgba(13,27,42,0.15);
+}
+.skill-icon{font-size:38px;color:var(--navy-900);margin-bottom:8px;}
+.skill-name{font-weight:700;margin:0 0 6px}
+.skill-desc{font-size:0.9rem;color:var(--muted);display:none}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:24px}
+.project{
+  position:relative;border-radius:14px;overflow:hidden;
+  background:#f0f4ff;
+  box-shadow:0 12px 36px rgba(13,27,42,0.08);
+  transition:transform .22s;
+}
+.project img{width:100%;height:200px;object-fit:cover;display:block}
+.project .meta{padding:16px}
+.project h3{margin:0 0 8px;color:var(--navy-700)}
+.project p{margin:0;color:var(--muted)}
+.project .overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(13,27,42,0),rgba(13,27,42,0.2));
+  opacity:0;transition:opacity .22s;
+}
+.project:hover{transform:translateY(-8px)}
+.project:hover .overlay{opacity:1}
+
+/* SOCIAL LINKS */
+.socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.socials a{
+  background:rgba(14,28,47,0.06);
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:600;
+  color:var(--navy-900);
+  transition:all .25s;
+}
+.socials a:hover{background:var(--accent);color:#fff;box-shadow:0 0 15px rgba(116,179,240,0.5);}
+
+/* FOOTER */
+footer{background:var(--navy-900);color:var(--blue-100);padding:24px 20px;text-align:center}
+
+/* REVEAL ANIMATION */
+.reveal{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
+.reveal.in-view{opacity:1;transform:none}
+
+/* EXPERIENCE ALIGNMENT FIX */
+
+#experience p.lead-small{text-align:center;max-width:820px;margin:0 auto 12px;}
+
+/* RESPONSIVE */
+@media(max-width:720px){
+  .hero-text h1{font-size:1.9rem}
+  .avatar{width:130px;height:130px}
+  .project img{height:160px}
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container hero">
+    <div class="avatar reveal"><img src="IMG-20230819-WA0018.jpg" alt="Moegamat Tauriq Osman profile photo"></div>
+    <div class="hero-text reveal">
+      <h1>Moegamat Tauriq Osman</h1>
+      <p class="lead">ICT Applications Development</p>
+      <nav>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="reveal">
+  <div class="container">
+    <h2>About Me</h2>
+    <p class="lead-small">
+      I'm <b>Moegamat Tauriq Osman</b>, a third-year student studying Applications Development at Cape Peninsula University of Technology.
+      Driven by a passion for technology and coding, I’m constantly exploring how development can create real-world impact.  
+      With curiosity and a commitment to continuous learning, I’m on a journey to build innovative, user-centered solutions.
+      <br><br><b>This is my journey — and I'm just getting started.</b>
+    </p>
+    <div style="margin-top:18px;text-align:center;">
+      <a class="btn" href="#projects">See My Projects</a>
+      <a class="btn" style="margin-left:10px;background:transparent;border:2px solid var(--accent);color:var(--accent);box-shadow:none" href="mailto:moegamattauriqosman@gmail.com">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="alt reveal">
+  <div class="container">
+    <h2>Experience</h2>
+    <p class="lead-small"><b>Student (2023–2025) — Diploma in Applications Development</p></b><br>
+      <p class ="lead-small"> Gained foundational knowledge of software engineering principles.</p>
+      <p class ="lead-small"> Built client-server Java applications following common software design patterns</p>
+      <p class ="lead-small"> Worked with and implemented relational databases with SQL; practiced data modelling and queries</p>
+      <p class ="lead-small"> Worked with various frameworks like React, Laravel and Spring</p>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card" onclick="toggleSkill(this)">
+        <i class="devicon-java-plain skill-icon"></i>
+        <div class="skill-name">Java</div>
+        <div class="skill-desc">OOP, collections, threads; backend and API development.</div>
+      </div>
+
+      <div class="skill-card" onclick="toggleSkill(this)">
+        <i class="devicon-spring-plain skill-icon"></i>
+        <div class="skill-name">Spring Boot</div>
+        <div class="skill-desc">Building Java REST APIs and production-ready applications.</div>
+      </div>
+
+      <div class="skill-card" onclick="toggleSkill(this)">
+        <i class="devicon-react-original skill-icon"></i>
+        <div class="skill-name">React</div>
+        <div class="skill-desc">Modern component-based frontend development.</div>
+      </div>
+
+      <div class="skill-card" onclick="toggleSkill(this)">
+        <i class="devicon-php-plain skill-icon"></i>
+        <div class="skill-name">PHP</div>
+        <div class="skill-desc">Backend scripting, form handling, and CRUD web apps.</div>
+      </div>
+
+      <div class="skill-card" onclick="toggleSkill(this)">
+        <i class="devicon-laravel-plain skill-icon"></i>
+        <div class="skill-name">Laravel PHP</div>
+        <div class="skill-desc">Modern PHP framework for building robust web apps.</div>
+      </div>
+
+      <div class="skill-card" onclick="toggleSkill(this)">
+        <i class="devicon-javascript-plain skill-icon"></i>
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-desc">Dynamic UI behavior, DOM manipulation, async logic.</div>
+      </div>
+
+      <div class="skill-card" onclick="toggleSkill(this)">
+        <i class="devicon-mysql-plain skill-icon"></i>
+        <div class="skill-name">SQL</div>
+        <div class="skill-desc">Database design, queries, and optimization.</div>
+      </div>
+
+      <div class="skill-card" onclick="toggleSkill(this)">
+        <i class="devicon-html5-plain skill-icon"></i>
+        <div class="skill-name">HTML</div>
+        <div class="skill-desc">Clean semantic structure for accessible web design.</div>
+      </div>
+
+      <div class="skill-card" onclick="toggleSkill(this)">
+        <i class="devicon-css3-plain skill-icon"></i>
+        <div class="skill-name">CSS</div>
+        <div class="skill-desc">Responsive layouts and elegant UI with Flexbox & Grid.</div>
+      </div>
+
+      <div class="skill-card" onclick="toggleSkill(this)">
+        <i class="fa-brands fa-figma skill-icon"></i>
+        <div class="skill-name">Figma</div>
+        <div class="skill-desc">UI/UX design and prototyping for web and mobile apps.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="projects" class="alt reveal">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project">
+        <img src="AmberAlert.png" alt="Amber Alert">
+        <div class="overlay"></div>
+        <div class="meta">
+          <h3>Amber Alert</h3>
+          <p>A web app for reporting missing persons, accidents, and crimes in real time. Developed with React framework, JavaScript, Html, Css, Express.JS</p><br>
+          <a href="https://github.com/Moegamat-Tauriq-Osman/amber-alert-RM3" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="project">
+        <img src="Screenshot 2025-09-12 100225.png" alt="HireHelper">
+        <div class="overlay"></div>
+        <div class="meta">
+          <h3>HireHelper</h3>
+          <p>Platform connecting clients to local service providers. Developed Java Spring Boot backend with React frontend.</p><br>
+          <a href="https://github.com/Moegamat-Tauriq-Osman/HireAHelper" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="project">
+        <img src="task.jpg" alt="Task Manager">
+        <div class="overlay"></div>
+        <div class="meta">
+          <h3>Task Management</h3>
+          <p>Task management application for managing and assigning individual or organizational tasks efficiently. Developed with Laravel Framework, Php and Blade</p><br>
+          <a href="https://github.com/Moegamat-Tauriq-Osman/Task-Management-App" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="project">
+        <img src="wp9315286.png" alt="PawPoint">
+        <div class="overlay"></div>
+        <div class="meta">
+          <h3>PawPoint</h3>
+          <p>Feline service booking system tailored for feline needs. It features and Admin Dashboard to manage services, staff and customer bookings as well as a 
+            Staff dashboard to manage customer bookings. Developed Laravel, PHP and Blade</p><br>
+          <a href="https://github.com/Moegamat-Tauriq-Osman/paw-point" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="project">
+        <img src="fitness.png" alt="PawPoint">
+        <div class="overlay"></div>
+        <div class="meta">
+          <h3>Fitness Equipment & Apparel</h3>
+          <p>A web-based E-commmerce application for fitness enthusiasts to shop for fitness products. It features an Admin Dashboard to manage products, categories and customer orders
+            Developed with React framework, JavaScript, Html, Css, Express.JS</p><br>
+          <a href="https://github.com/Moegamat-Tauriq-Osman/FitnessEquipementApparel.git" class="btn">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="container">
+    <h2>Let’s Connect</h2>
+    <div class="socials">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:moegamattauriqosman@gmail.com">Email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>• © 2025 Moegamat Tauriq Osman</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view')});
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(n=>observer.observe(n));
+
+  function toggleSkill(card){
+    const desc = card.querySelector('.skill-desc');
+    const shown = getComputedStyle(desc).display === 'block';
+    document.querySelectorAll('.skill-desc').forEach(d=>d.style.display='none');
+    desc.style.display = shown ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
