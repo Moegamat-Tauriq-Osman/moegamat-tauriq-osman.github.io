@@ -379,72 +379,56 @@
       line-height: 1.6;
     }
 
-    /* ── Skills ── */
+    /* ── Skills (Pill Style) ── */
     .skills-block {
-      margin-top: 40px;
+      margin-bottom: 36px;
     }
-    .skills-block:first-of-type { margin-top: 0; }
+    .skills-block:last-of-type { margin-bottom: 0; }
 
     .skills-label {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #a78bfa;
-      letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      padding-bottom: 8px;
+      letter-spacing: 1px;
+      color: #8b5cf6;
+      margin-bottom: 12px;
+      display: block;
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 16px;
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-    .skill-card {
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
       background: #121212;
-      padding: 28px 16px 20px;
-      border-radius: 16px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.04);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-    .skill-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .skill-card:hover::after { opacity: 1; }
-    .skill-card:hover {
-      border-color: rgba(139, 92, 246, 0.2);
-      transform: translateY(-4px);
-    }
-    .skill-card .skill-icon {
-      font-size: 2.2rem;
-      color: #a78bfa;
-      display: block;
-      margin-bottom: 8px;
-    }
-    .skill-card .skill-name {
-      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 40px;
       font-size: 0.85rem;
+      font-weight: 500;
       color: #eaeaea;
-      display: block;
+      transition: all 0.2s ease;
+      cursor: default;
     }
-    .skill-card .skill-desc {
-      font-size: 0.75rem;
-      color: #777;
-      margin-top: 8px;
-      display: none;
-      line-height: 1.5;
+    .skill-pill i {
+      font-size: 1.2rem;
+      color: #a78bfa;
+      transition: color 0.2s ease;
     }
-    .skill-card.active .skill-desc { display: block; }
+    .skill-pill:hover {
+      background: #8b5cf6;
+      color: #fff;
+      border-color: #8b5cf6;
+      transform: translateY(-2px);
+    }
+    .skill-pill:hover i {
+      color: #fff;
+    }
 
     /* ── Projects ── */
     .projects-grid {
@@ -586,7 +570,6 @@
       section { padding: 64px 0; }
       h2 { font-size: 1.8rem; }
       .projects-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-      .skills-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
       .about-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
       .stat-card { padding: 16px; }
       .stat-card .number { font-size: 1.4rem; }
@@ -684,7 +667,7 @@
   </div>
 </section>
 
-<!-- ─── EXPERIENCE ─── (now a standalone section) -->
+<!-- ─── EXPERIENCE ─── -->
 <section id="experience" class="alt reveal">
   <div class="container">
     <div class="section-header centered">
@@ -708,90 +691,48 @@
   </div>
 </section>
 
-<!-- ─── SKILLS ─── -->
+<!-- ─── SKILLS (UPDATED PILL STYLE) ─── -->
 <section id="skills" class="reveal">
   <div class="container">
     <div class="section-header centered">
       <span class="section-label">Skills</span>
-      <h2>Tools & Technologies</h2>
-      <p class="section-sub">Click any card to learn more about what I work with.</p>
+      <h2>What I work with</h2>
+      <p class="section-sub">A selection of technologies and tools I use daily.</p>
     </div>
 
-    <!-- Languages -->
     <div class="skills-block">
-      <h3 class="skills-label">Languages</h3>
-      <div class="skills-grid">
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="devicon-java-plain skill-icon"></i>
-          <span class="skill-name">Java</span>
-          <span class="skill-desc">OOP, collections, multithreading &amp; backend APIs.</span>
-        </div>
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="devicon-javascript-plain skill-icon"></i>
-          <span class="skill-name">JavaScript</span>
-          <span class="skill-desc">Modern ES6+, async, DOM manipulation &amp; APIs.</span>
-        </div>
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="devicon-php-plain skill-icon"></i>
-          <span class="skill-name">PHP</span>
-          <span class="skill-desc">Server-side scripting &amp; CRUD web apps.</span>
-        </div>
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="devicon-mysql-plain skill-icon"></i>
-          <span class="skill-name">SQL</span>
-          <span class="skill-desc">Database design, complex queries &amp; optimisation.</span>
-        </div>
+      <div class="skills-label">Languages</div>
+      <div class="skills-row">
+        <div class="skill-pill"><i class="devicon-java-plain"></i> Java</div>
+        <div class="skill-pill"><i class="devicon-javascript-plain"></i> JavaScript</div>
+        <div class="skill-pill"><i class="devicon-php-plain"></i> PHP</div>
+        <div class="skill-pill"><i class="devicon-mysql-plain"></i> SQL</div>
       </div>
     </div>
 
-    <!-- Frontend -->
     <div class="skills-block">
-      <h3 class="skills-label">Frontend</h3>
-      <div class="skills-grid">
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="devicon-react-original skill-icon"></i>
-          <span class="skill-name">React</span>
-          <span class="skill-desc">Component‑based UIs with hooks &amp; state.</span>
-        </div>
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="devicon-html5-plain skill-icon"></i>
-          <span class="skill-name">HTML5</span>
-          <span class="skill-desc">Semantic, accessible markup.</span>
-        </div>
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="devicon-css3-plain skill-icon"></i>
-          <span class="skill-name">CSS3</span>
-          <span class="skill-desc">Flexbox, Grid &amp; responsive layouts.</span>
-        </div>
+      <div class="skills-label">Frontend</div>
+      <div class="skills-row">
+        <div class="skill-pill"><i class="devicon-react-original"></i> React</div>
+        <div class="skill-pill"><i class="devicon-html5-plain"></i> HTML5</div>
+        <div class="skill-pill"><i class="devicon-css3-plain"></i> CSS3</div>
       </div>
     </div>
 
-    <!-- Backend -->
     <div class="skills-block">
-      <h3 class="skills-label">Backend</h3>
-      <div class="skills-grid">
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="devicon-spring-plain skill-icon"></i>
-          <span class="skill-name">Spring Boot</span>
-          <span class="skill-desc">REST APIs, security &amp; enterprise apps.</span>
-        </div>
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="devicon-laravel-plain skill-icon"></i>
-          <span class="skill-name">Laravel</span>
-          <span class="skill-desc">MVC, Eloquent ORM &amp; authentication.</span>
-        </div>
+      <div class="skills-label">Backend</div>
+      <div class="skills-row">
+        <div class="skill-pill"><i class="devicon-spring-plain"></i> Spring Boot</div>
+        <div class="skill-pill"><i class="devicon-laravel-plain"></i> Laravel</div>
       </div>
     </div>
 
-    <!-- Design & Tools -->
     <div class="skills-block">
-      <h3 class="skills-label">Design &amp; Tools</h3>
-      <div class="skills-grid">
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="fa-brands fa-figma skill-icon"></i>
-          <span class="skill-name">Figma</span>
-          <span class="skill-desc">UI/UX design, wireframes &amp; prototypes.</span>
-        </div>
+      <div class="skills-label">Design &amp; Tools</div>
+      <div class="skills-row">
+        <div class="skill-pill"><i class="fa-brands fa-figma"></i> Figma</div>
+        <div class="skill-pill"><i class="devicon-git-plain"></i> Git</div>
+        <div class="skill-pill"><i class="devicon-github-original"></i> GitHub</div>
       </div>
     </div>
   </div>
@@ -942,13 +883,6 @@
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-
-  // ── Toggle skill description ──
-  function toggleSkill(card) {
-    const isActive = card.classList.contains('active');
-    document.querySelectorAll('.skill-card.active').forEach(c => c.classList.remove('active'));
-    if (!isActive) card.classList.add('active');
-  }
 </script>
 
 </body>
