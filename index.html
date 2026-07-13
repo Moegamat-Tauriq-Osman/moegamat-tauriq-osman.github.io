@@ -368,94 +368,54 @@
       margin: 0 auto;
     }
 
-    
-    /* ── About Grid ── */
-#about .about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
-}
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
 
-/* ── Code Window ── */
-.code-window {
-  background: #0d0d0d;
-  border-radius: 12px;
-  border: 1px solid #2a2a2a;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.code-window:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 30px 80px rgba(139, 92, 246, 0.08);
-}
+    #about .about-text p {
+      color: #b0b0b0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
 
-.code-window-header {
-  background: #1a1a1a;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 1px solid #2a2a2a;
-}
-.code-window-header .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.code-window-header .dot.red   { background: #ff5f56; }
-.code-window-header .dot.yellow{ background: #ffbd2e; }
-.code-window-header .dot.green { background: #27c93f; }
-.code-window-header .window-title {
-  margin-left: 8px;
-  color: #666;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-}
+    #about .about-text p strong {
+      color: #eaeaea;
+    }
 
-.code-editor {
-  padding: 20px 24px;
-  overflow-x: auto;
-  font-family: 'Fira Code', 'Courier New', monospace;
-  font-size: 0.85rem;
-  line-height: 1.8;
-  color: #abb2bf;
-  min-height: 220px;
-  background: #0d0d0d;
-}
-.code-editor .code-keyword   { color: #c678dd; }
-.code-editor .code-function  { color: #61afef; }
-.code-editor .code-string    { color: #98c379; }
-.code-editor .code-tag       { color: #e06c75; }
-.code-editor .code-variable  { color: #e06c75; }
-.code-editor .code-operator  { color: #56b6c2; }
-.code-editor .code-comment   { color: #5c6370; }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
 
-/* ── Cursor blink ── */
-.typing-cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1.1em;
-  background: #abb2bf;
-  margin-left: 2px;
-  vertical-align: text-bottom;
-  animation: blink 1s step-end infinite;
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
+    .stat-card {
+      background: #121212;
+      padding: 24px 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      text-align: center;
+    }
 
-/* ── Responsive ── */
-@media (max-width: 960px) {
-  #about .about-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-}
+    .stat-card .number {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .stat-card .label {
+      font-size: 0.8rem;
+      color: #888;
+      font-weight: 400;
+    }
+
     .exp-timeline {
       display: flex;
       flex-direction: column;
@@ -845,50 +805,36 @@
     </div>
   </header>
 
-<!-- ─── ABOUT ─── -->
-<section id="about" class="reveal">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">About</span>
-      <h2>Who I Am</h2>
-      <p class="section-sub">A quick look at my journey, values, and what drives me as a developer.</p>
-    </div>
-
-    <div class="about-grid">
-      <!-- Text column -->
-      <div class="about-text">
-        <p>
-          I'm a <strong>developer</strong> driven by a passion for technology and coding. I'm constantly exploring how
-          development can create real-world impact.
-          With curiosity and a commitment to continuous learning, I'm on a journey to build innovative, user‑friendly
-          solutions.
-          My work spans both <strong>frontend</strong> and <strong>backend</strong> development, allowing me to
-          transform ideas into complete, functional web applications.
-        </p>
-        <p>
-          I believe great software is built with intention — combining robust architecture with
-          thoughtful user experience. I'm constantly exploring new tools and patterns to build
-          solutions that genuinely help people.
-        </p>
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">
+          <h2>About</h2>
+        </span>
       </div>
 
-      <!-- Live Code column -->
-      <div class="about-code">
-        <div class="code-window">
-          <div class="code-window-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="window-title">portfolio.jsx</span>
-          </div>
-          <div class="code-editor">
-            <pre style="margin:0; padding:0; background:transparent; border:none;"><code id="code-content"></code><span class="typing-cursor"></span></pre>
-          </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a <strong>developer</strong> driven by a passion for technology and coding. I’m constantly exploring how
+            development can create real-world impact.
+            With curiosity and a commitment to continuous learning, I’m on a journey to build innovative, user‑friendly
+            solutions.
+            My work spans both <strong>frontend</strong> and <strong>backend</strong> development, allowing me to
+            transform ideas into complete, functional web applications.
+          </p>
+          <p>
+            I believe great software is built with intention — combining robust architecture with
+            thoughtful user experience. I'm constantly exploring new tools and patterns to build
+            solutions that genuinely help people.
+          </p>
         </div>
+
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- EXPERIENCE -->
   <section id="experience" class="alt reveal">
@@ -1183,37 +1129,6 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-    // ── Live Code Typing Effect ──
-const codeSnippet = `<span class="code-keyword">const</span> <span class="code-function">Portfolio</span> = () => {<br>  <span class="code-keyword">return</span> (<br>    &lt;<span class="code-tag">div</span> <span class="code-variable">className</span>=<span class="code-string">"app"</span>&gt;<br>      &lt;<span class="code-tag">Header</span> /&gt;<br>      &lt;<span class="code-tag">About</span> /&gt;<br>      &lt;<span class="code-tag">Skills</span> /&gt;<br>      &lt;<span class="code-tag">Projects</span> /&gt;<br>      &lt;<span class="code-tag">Contact</span> /&gt;<br>    &lt;/<span class="code-tag">div</span>&gt;<br>  );<br>};`;
-
-let charIndex = 0;
-let isTypingComplete = false;
-const codeElement = document.getElementById('code-content');
-
-function typeCode() {
-  if (charIndex < codeSnippet.length) {
-    codeElement.innerHTML += codeSnippet.charAt(charIndex);
-    charIndex++;
-    setTimeout(typeCode, 18);
-  } else {
-    isTypingComplete = true;
-    // Optional: remove cursor after typing
-    // document.querySelector('.typing-cursor')?.remove();
-  }
-}
-
-// ── Start typing when About section comes into view ──
-const aboutObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !isTypingComplete) {
-      typeCode();
-      aboutObserver.disconnect(); // only run once
-    }
-  });
-}, { threshold: 0.3 });
-
-const aboutCodeBlock = document.querySelector('.about-code');
-if (aboutCodeBlock) aboutObserver.observe(aboutCodeBlock);
   </script>
 
 </body>
