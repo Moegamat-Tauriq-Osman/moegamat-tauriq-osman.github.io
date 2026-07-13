@@ -20,654 +20,755 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #0d0d0f;
+  --surface: #141417;
+  --surface2: #1c1c21;
+  --border: rgba(255,255,255,0.07);
+  --accent: #c9a97e;
+  --accent-glow: rgba(201,169,126,0.15);
+  --accent2: #e8d5b8;
+  --text: #f0ece6;
+  --muted: #8a8490;
+  --muted2: #5e5a65;
+  --radius: 18px;
+  --transition: .35s ease;
+  --container: 1080px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
 }
 
-:root{
-
---bg:#0a0a0a;
---surface:#111111;
---surface2:#171717;
---border:#262626;
-
---text:#ffffff;
---muted:#9ca3af;
-
---accent:#ffffff;
-
---radius:18px;
-
---transition:.35s ease;
-
---container:1200px;
-
+img {
+  max-width: 100%;
+  display: block;
 }
 
-body{
-
-background:var(--bg);
-
-color:var(--text);
-
-font-family:'Inter',sans-serif;
-
-line-height:1.7;
-
-overflow-x:hidden;
-
+a {
+  text-decoration: none;
+  color: inherit;
 }
-
-img{
 
-max-width:100%;
-
-display:block;
-
+.container {
+  width: min(92%, var(--container));
+  margin: auto;
+  position: relative;
+  z-index: 1;
 }
-
-a{
 
-text-decoration:none;
-
-color:inherit;
-
+section {
+  padding: 100px 0;
 }
-
-.container{
-
-width:min(92%,var(--container));
 
-margin:auto;
-
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
-
-section{
 
-padding:110px 0;
-
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
 }
-
-h1,h2,h3{
 
-font-weight:700;
-
-letter-spacing:-1px;
-
+/* ── SECTION HEADER ── */
+.section-header {
+  margin-bottom: 48px;
 }
-
-h2{
-
-font-size:2.6rem;
 
-margin-bottom:15px;
-
+.section-eyebrow {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
 }
-
-.section-title{
-
-text-align:center;
-
-margin-bottom:60px;
-
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0;
 }
-
-.section-title p{
-
-color:var(--muted);
 
-max-width:700px;
+/* ── HEADER / NAV ── */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(13,13,15,0.8);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+header .container {
+  width: 100%;
+  max-width: var(--container);
+  margin: auto;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  font-weight: 300;
+  color: var(--muted);
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .8rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: .2s;
+  letter-spacing: .3px;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+  background: var(--surface2);
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 24px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,169,126,0.08) 0%, transparent 65%);
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
+}
 
-margin:auto;
-
+.avatar {
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  flex-shrink: 0;
 }
-
-header{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-background:rgba(10,10,10,.92);
-
-backdrop-filter:blur(20px);
 
-border-bottom:1px solid var(--border);
-
-z-index:1000;
-
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
-nav{
-
-height:75px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
 
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
 }
 
-.logo{
-
-font-size:1.25rem;
-
-font-weight:700;
-
-letter-spacing:2px;
-
+.hero-tag::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
 }
 
-.logo span{
-
-color:#9ca3af;
-
-font-weight:400;
-
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
 }
-
-.nav-links{
 
-display:flex;
-
-gap:35px;
-
-list-style:none;
-
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-
-.nav-links a{
-
-font-size:.95rem;
-
-color:var(--muted);
-
-transition:var(--transition);
 
+.hero p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin-bottom: 36px;
+  line-height: 1.7;
 }
 
-.nav-links a:hover{
-
-color:white;
-
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
-
-.hero{
-
-min-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-padding-top:80px;
 
+.btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: .85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: .25s;
+  border: none;
+  cursor: pointer;
 }
 
-.hero-grid{
-
-display:grid;
-
-grid-template-columns:320px 1fr;
-
-gap:70px;
-
-align-items:center;
-
+.btn-primary {
+  background: var(--accent);
+  color: #0d0d0f;
 }
-
-.avatar{
-
-width:300px;
 
-height:300px;
-
-overflow:hidden;
-
-border-radius:20px;
-
-border:1px solid var(--border);
-
-background:var(--surface);
-
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(201,169,126,0.25);
 }
-
-.avatar img{
-
-width:100%;
-
-height:100%;
 
-object-fit:cover;
-
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
 }
-
-.hero h1{
-
-font-size:4.2rem;
 
-line-height:1;
-
-margin-bottom:25px;
-
+.btn-secondary:hover {
+  background: var(--surface2);
+  border-color: var(--accent);
 }
-
-.hero h1 span{
-
-display:block;
 
-color:#8d8d8d;
-
-font-weight:300;
-
+/* ── ABOUT ── */
+#about {
+  background: var(--surface);
 }
-
-.hero p{
-
-font-size:1.1rem;
 
-color:var(--muted);
-
-max-width:700px;
-
-margin-bottom:40px;
-
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
 }
-
-.hero-buttons{
 
-display:flex;
-
-gap:15px;
-
-flex-wrap:wrap;
-
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-size: .95rem;
+  line-height: 1.7;
 }
-
-.btn{
-
-padding:14px 28px;
-
-border-radius:999px;
-
-border:1px solid var(--border);
 
-transition:var(--transition);
-
-font-weight:600;
-
-display:inline-flex;
-
-align-items:center;
-
-gap:10px;
-
+.about-text strong {
+  color: var(--text);
 }
-
-.btn-primary{
-
-background:white;
-
-color:black;
 
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
-.btn-primary:hover{
-
-transform:translateY(-4px);
-
+.stat-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: .25s;
 }
-
-.btn-secondary{
 
-background:transparent;
-
+.stat-card:hover {
+  border-color: rgba(201,169,126,0.2);
+  transform: translateY(-4px);
 }
-
-.btn-secondary:hover{
-
-background:white;
-
-color:black;
 
+.stat-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
 }
 
-.about-grid{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:70px;
-
-align-items:start;
-
+.stat-card span {
+  color: var(--muted);
+  font-size: .85rem;
 }
-
-.about-text p{
-
-color:var(--muted);
-
-margin-bottom:20px;
 
+/* ── EXPERIENCE ── */
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.stats{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:20px;
-
+.exp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  transition: .25s;
+  position: relative;
+  overflow: hidden;
 }
-
-.stat-card{
-
-background:var(--surface);
-
-border:1px solid var(--border);
 
-border-radius:18px;
-
-padding:35px;
-
-transition:.3s;
-
+.exp-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent), transparent);
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+  transition: .25s;
 }
-
-.stat-card:hover{
 
-transform:translateY(-6px);
-
-border-color:#444;
-
+.exp-card:hover {
+  border-color: rgba(201,169,126,0.2);
+  background: var(--surface2);
+  transform: translateX(4px);
 }
-
-.stat-card h3{
-
-font-size:2rem;
 
-margin-bottom:8px;
-
+.exp-card:hover::before {
+  opacity: 1;
 }
-
-.stat-card span{
-
-color:var(--muted);
 
+.exp-meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
-.experience{
-
-display:grid;
-
-gap:30px;
-
+.exp-role {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
 }
-
-.timeline{
 
-background:var(--surface);
-
-border:1px solid var(--border);
-
-border-radius:20px;
-
-padding:35px;
-
-transition:.3s;
-
+.exp-company {
+  font-size: .85rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-top: 2px;
 }
-
-.timeline:hover{
-
-border-color:#444;
-
-transform:translateY(-6px);
 
+.exp-date {
+  font-size: .75rem;
+  color: var(--muted2);
+  font-weight: 500;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.timeline h3{
-
-font-size:1.4rem;
-
-margin-bottom:12px;
-
+.exp-desc {
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.7;
 }
-
-.timeline h4{
-
-color:#bfbfbf;
-
-margin-bottom:15px;
-
-font-weight:500;
 
+/* ── SKILLS ── */
+#skills {
+  background: var(--surface);
 }
 
-.timeline ul{
-
-margin-top:20px;
-
-padding-left:20px;
-
-color:var(--muted);
-
+.skills-block {
+  margin-bottom: 48px;
 }
 
-.timeline li{
-
-margin-bottom:12px;
-
+.skills-block:last-child {
+  margin-bottom: 0;
 }
-
-.skills-grid{
-
-display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-
-gap:25px;
-
+.skills-label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted2);
+  margin-bottom: 16px;
 }
-
-.skill-card{
-
-background:var(--surface);
-
-border:1px solid var(--border);
-
-padding:30px;
-
-border-radius:20px;
 
-transition:.3s;
-
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-
-.skill-card:hover{
-
-transform:translateY(-8px);
-
-border-color:#4a4a4a;
 
+.skill-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: .2s;
+  cursor: default;
 }
 
-.skill-card i{
-
-font-size:2rem;
-
-margin-bottom:20px;
-
+.skill-pill:hover {
+  border-color: rgba(201,169,126,0.35);
+  background: var(--accent-glow);
+  color: var(--accent2);
 }
-
-.skill-card h3{
 
-margin-bottom:15px;
-
+.skill-pill i {
+  font-size: 18px;
+  color: var(--accent);
 }
-
-.skill-tags{
-
-display:flex;
 
-flex-wrap:wrap;
-
-gap:10px;
-
+/* ── PROJECTS ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
-
-.skill-tags span{
-
-background:#1d1d1d;
 
-padding:8px 12px;
-
-border-radius:999px;
-
-font-size:.85rem;
-
-color:#cfcfcf;
-
-border:1px solid #2a2a2a;
-
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px;
+  transition: .25s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
 }
-
-.projects-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 
-gap:30px;
-
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, var(--accent-glow), transparent 60%);
+  opacity: 0;
+  transition: .3s;
+  pointer-events: none;
 }
-
-.project-card{
-
-background:var(--surface);
-
-border:1px solid var(--border);
-
-border-radius:20px;
-
-overflow:hidden;
-
-transition:.35s;
 
+.project-card:hover {
+  border-color: rgba(201,169,126,0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
-.project-card:hover{
-
-transform:translateY(-10px);
-
-border-color:#555;
-
+.project-card:hover::after {
+  opacity: 1;
 }
-
-.project-image{
 
-height:220px;
-
-overflow:hidden;
-
+.project-num {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--muted2);
 }
 
-.project-image img{
+.project-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
 
-width:100%;
+.project-desc {
+  font-size: .875rem;
+  color: var(--muted);
+  line-height: 1.65;
+  flex: 1;
+}
 
-height:100%;
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
 
-object-fit:cover;
+.tag {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(201,169,126,0.08);
+  border: 1px solid rgba(201,169,126,0.18);
+  color: var(--accent);
+}
 
-transition:.5s;
+/* ── CONTACT ── */
+#contact {
+  background: var(--surface);
+}
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-.project-card:hover img{
+.contact-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: .25s;
+  text-align: center;
+}
 
-transform:scale(1.08);
+.contact-card:hover {
+  border-color: rgba(201,169,126,0.2);
+  transform: translateY(-4px);
+}
 
+.contact-card i {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 16px;
 }
 
-.project-content{
+.contact-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
 
-padding:28px;
+.contact-card p {
+  color: var(--muted);
+  font-size: .85rem;
+  margin-bottom: 16px;
+}
 
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: .85rem;
+  color: var(--accent);
+  transition: .2s;
 }
 
-.project-content h3{
+.contact-link:hover {
+  color: var(--accent2);
+  gap: 12px;
+}
 
-margin-bottom:15px;
+/* ── FOOTER ── */
+footer {
+  padding: 50px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
 
+footer h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: var(--text);
 }
 
-.project-content p{
+footer p {
+  color: var(--muted);
+  font-size: .85rem;
+}
 
-color:var(--muted);
+footer .copyright {
+  margin-top: 20px;
+  color: var(--muted2);
+  font-size: .75rem;
+}
 
-margin-bottom:20px;
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
 
-}
+  .hero p {
+    max-width: 100%;
+  }
 
-.tech-stack{
+  .hero-buttons {
+    justify-content: center;
+  }
 
-display:flex;
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-flex-wrap:wrap;
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-gap:10px;
+  .avatar {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
 
-margin-bottom:25px;
+  .hero h1 {
+    font-size: 2.6rem;
+  }
 
+  .hero-tag {
+    justify-content: center;
+  }
 }
 
-.tech-stack span{
+@media (max-width: 600px) {
+  header {
+    padding: 0 16px;
+    height: 56px;
+  }
 
-padding:7px 12px;
+  .logo {
+    font-size: .8rem;
+  }
 
-background:#1b1b1b;
+  .nav-links a {
+    font-size: .7rem;
+    padding: 4px 8px;
+  }
 
-border-radius:999px;
+  .nav-links {
+    gap: 4px;
+  }
 
-font-size:.8rem;
+  section {
+    padding: 70px 0;
+  }
 
-border:1px solid #2a2a2a;
+  .exp-card {
+    padding: 20px;
+  }
 
-}
+  .exp-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.github-link{
+  .project-card {
+    padding: 20px;
+  }
 
-display:inline-flex;
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
 
-align-items:center;
+  .stat-card {
+    padding: 20px;
+  }
 
-gap:8px;
+  .stat-card h3 {
+    font-size: 1.4rem;
+  }
 
-font-weight:600;
+  .hero {
+    padding: 70px 16px 40px;
+  }
 
-}
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-.github-link:hover{
+  .hero p {
+    font-size: .95rem;
+  }
 
-text-decoration:underline;
+  .section-title {
+    font-size: 1.6rem;
+  }
 
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-/* Continue in Part 2... */
 
 </style>
 
@@ -676,102 +777,60 @@ text-decoration:underline;
 <body>
 
 <header>
-
-<div class="container">
-
-<nav>
-
-<div class="logo">
-
-MOEGAMAT <span>TAURIQ OSMAN</span>
-
-</div>
-
-<ul class="nav-links">
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#experience">Experience</a></li>
-
-<li><a href="#skills">Skills</a></li>
-
-<li><a href="#projects">Projects</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-</div>
-
+  <div class="container">
+    <nav>
+      <div class="logo">
+        MOEGAMAT <span>TAURIQ OSMAN</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
+
 <!-- ========================= -->
 <!-- HERO -->
 <!-- ========================= -->
 
 <section class="hero">
-
-    <div class="container hero-grid">
-
-        <div class="avatar">
-            <img src="IMG-20230819-WA0018.jpg" alt="Moegamat Tauriq Osman">
-        </div>
-
-        <div>
-
-            <p style="color:#9ca3af;font-size:.95rem;margin-bottom:15px;">
-                SOFTWARE DEVELOPER • CAPE TOWN, SOUTH AFRICA
-            </p>
-
-            <h1>
-                Moegamat
-                <span>Tauriq Osman</span>
-            </h1>
-
-            <p>
-
-                I'm a Software Developer passionate about building secure,
-                scalable and modern web applications.
-
-                My experience spans full-stack development using
-                <strong>Java</strong>,
-                <strong>Spring Boot</strong>,
-                <strong>React</strong>,
-                <strong>Laravel</strong>,
-                <strong>JavaScript</strong> and
-                <strong>SQL</strong>.
-
-                I enjoy transforming ideas into intuitive digital experiences
-                while continuously learning new technologies and software
-                engineering practices.
-
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projects" class="btn btn-primary">
-
-                    <i class="fa-solid fa-code"></i>
-
-                    View Projects
-
-                </a>
-
-                <a href="#contact" class="btn btn-secondary">
-
-                    <i class="fa-solid fa-paper-plane"></i>
-
-                    Contact Me
-
-                </a>
-
-            </div>
-
-        </div>
-
+  <div class="container hero-grid">
+    <div class="avatar">
+      <img src="IMG-20230819-WA0018.jpg" alt="Moegamat Tauriq Osman">
     </div>
-
+    <div>
+      <div class="hero-tag">Software Developer</div>
+      <h1>
+        Moegamat<br>
+        <span class="highlight">Tauriq Osman</span>
+      </h1>
+      <p>
+        I'm a Software Developer passionate about building secure,
+        scalable and modern web applications. My experience spans full-stack
+        development using <strong style="color:var(--text);">Java</strong>,
+        <strong style="color:var(--text);">Spring Boot</strong>,
+        <strong style="color:var(--text);">React</strong>,
+        <strong style="color:var(--text);">Laravel</strong>,
+        <strong style="color:var(--text);">JavaScript</strong> and
+        <strong style="color:var(--text);">SQL</strong>.
+        I enjoy transforming ideas into intuitive digital experiences
+        while continuously learning new technologies and software
+        engineering practices.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-code"></i> View Projects
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fa-solid fa-paper-plane"></i> Contact Me
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ========================= -->
@@ -779,95 +838,52 @@ MOEGAMAT <span>TAURIQ OSMAN</span>
 <!-- ========================= -->
 
 <section id="about">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>About Me</h2>
-
-<p>
-
-A passionate software developer focused on building clean,
-responsive and secure applications with modern technologies.
-
-</p>
-
-</div>
-
-<div class="about-grid">
-
-<div class="about-text">
-
-<p>
-
-I'm <strong>Moegamat Tauriq Osman</strong>, a recent graduate from the
-Cape Peninsula University of Technology with a Diploma in
-Information & Communication Technology specialising in
-Applications Development.
-
-</p>
-
-<p>
-
-Throughout my studies I developed several full-stack projects,
-working across frontend, backend, databases and software
-architecture. I enjoy solving real-world problems through
-technology while continuously improving my development skills.
-
-</p>
-
-<p>
-
-I'm currently expanding my knowledge in software engineering,
-cybersecurity, cloud technologies and modern development
-practices while building projects that strengthen my practical
-experience.
-
-</p>
-
-</div>
-
-<div class="stats">
-
-<div class="stat-card">
-
-<h3>8+</h3>
-
-<span>Technologies Worked With</span>
-
-</div>
-
-<div class="stat-card">
-
-<h3>5+</h3>
-
-<span>Full Stack Projects</span>
-
-</div>
-
-<div class="stat-card">
-
-<h3>2025</h3>
-
-<span>ICT Graduate</span>
-
-</div>
-
-<div class="stat-card">
-
-<h3>∞</h3>
-
-<span>Continuous Learning</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">About</div>
+      <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm <strong>Moegamat Tauriq Osman</strong>, a recent graduate from the
+          Cape Peninsula University of Technology with a Diploma in
+          Information &amp; Communication Technology specialising in
+          Applications Development.
+        </p>
+        <p>
+          Throughout my studies I developed several full-stack projects,
+          working across frontend, backend, databases and software
+          architecture. I enjoy solving real-world problems through
+          technology while continuously improving my development skills.
+        </p>
+        <p>
+          I'm currently expanding my knowledge in software engineering,
+          cybersecurity, cloud technologies and modern development
+          practices while building projects that strengthen my practical
+          experience.
+        </p>
+      </div>
+      <div class="stats">
+        <div class="stat-card">
+          <h3>8+</h3>
+          <span>Technologies Worked With</span>
+        </div>
+        <div class="stat-card">
+          <h3>5+</h3>
+          <span>Full Stack Projects</span>
+        </div>
+        <div class="stat-card">
+          <h3>2025</h3>
+          <span>ICT Graduate</span>
+        </div>
+        <div class="stat-card">
+          <h3>∞</h3>
+          <span>Continuous Learning</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ========================= -->
@@ -875,693 +891,234 @@ experience.
 <!-- ========================= -->
 
 <section id="experience">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Experience</div>
+      <h2 class="section-title">My Experience</h2>
+    </div>
 
-<div class="container">
+    <div class="exp-list">
+      <div class="exp-card">
+        <div class="exp-meta">
+          <div>
+            <div class="exp-role">Business Administration Learnership (Level 3)</div>
+            <div class="exp-company">Edge Training Consultancy</div>
+          </div>
+          <div class="exp-date">2026</div>
+        </div>
+        <p class="exp-desc">
+          Completed a Business Administration Level 3 learnership while actively participating in a data research project. Utilised AI tools to assist with data collection, analysis, and reporting for Edge Training Consultancy. Contributed to organising and validating datasets, ensuring accuracy, consistency, and efficient documentation for internal use.
+        </p>
+      </div>
 
-<div class="section-title">
-
-<h2>Experience</h2>
-
-<p>
-
-My academic journey and practical software development experience.
-
-</p>
-
-</div>
-
-<div class="experience">
-
-<div class="timeline">
-
-<h3>
-
-Diploma in Information & Communication Technology
-
-</h3>
-
-<h4>
-
-Cape Peninsula University of Technology • 2023 – 2025
-
-</h4>
-
-<p style="color:#9ca3af;">
-
-Completed a Diploma specialising in Applications Development,
-building multiple real-world software projects while developing
-strong foundations in software engineering, backend development,
-frontend technologies and databases.
-
-</p>
-
-<ul>
-
-<li>Developed full-stack applications using Java, Spring Boot, React and Laravel.</li>
-
-<li>Designed relational databases using MySQL and SQL.</li>
-
-<li>Built secure RESTful APIs with authentication and authorization.</li>
-
-<li>Applied Object-Oriented Programming and software design patterns.</li>
-
-<li>Worked with Git and GitHub for version control and collaboration.</li>
-
-<li>Integrated frontend applications with backend services.</li>
-
-<li>Implemented responsive user interfaces using HTML, CSS and JavaScript.</li>
-
-<li>Practised secure development principles including HTTPS, CORS and input validation.</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
+      <div class="exp-card">
+        <div class="exp-meta">
+          <div>
+            <div class="exp-role">Diploma in ICT Applications Development</div>
+            <div class="exp-company">Academic Programme</div>
+          </div>
+          <div class="exp-date">2023 – 2025</div>
+        </div>
+        <p class="exp-desc">
+          Successfully completed a Diploma in ICT Applications Development. Gained strong foundational and practical skills in software development, including Java-based application development using Spring Boot and JPA. Built full-stack systems using React and REST APIs, and implemented secure authentication using JWT and Spring Security. Worked collaboratively in team environments using Git and GitHub version control workflows, strengthening both technical and project-based development skills.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- ========================= -->
 <!-- SKILLS -->
 <!-- ========================= -->
 
 <section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Skills</div>
+      <h2 class="section-title">What I work with</h2>
+    </div>
 
-<div class="container">
+    <div class="skills-block">
+      <div class="skills-label">Languages</div>
+      <div class="skills-row">
+        <div class="skill-pill"><i class="devicon-java-plain"></i> Java</div>
+        <div class="skill-pill"><i class="devicon-csharp-plain"></i> C#</div>
+        <div class="skill-pill"><i class="devicon-javascript-plain"></i> JavaScript</div>
+        <div class="skill-pill"><i class="devicon-python-plain"></i> Python</div>
+        <div class="skill-pill"><i class="devicon-mysql-plain"></i> SQL</div>
+      </div>
+    </div>
 
-<div class="section-title">
+    <div class="skills-block">
+      <div class="skills-label">Frontend</div>
+      <div class="skills-row">
+        <div class="skill-pill"><i class="devicon-react-original"></i> React</div>
+        <div class="skill-pill"><i class="devicon-html5-plain"></i> HTML5</div>
+        <div class="skill-pill"><i class="devicon-css3-plain"></i> CSS3</div>
+      </div>
+    </div>
 
-<h2>Skills</h2>
+    <div class="skills-block">
+      <div class="skills-label">Backend</div>
+      <div class="skills-row">
+        <div class="skill-pill"><i class="devicon-spring-plain"></i> Spring Boot</div>
+        <div class="skill-pill"><i class="devicon-dotnetcore-plain"></i> .NET Web API</div>
+        <div class="skill-pill"><i class="devicon-json-plain"></i> JWT Auth</div>
+      </div>
+    </div>
 
-<p>
+    <div class="skills-block">
+      <div class="skills-label">Cloud &amp; DevOps</div>
+      <div class="skills-row">
+        <div class="skill-pill"><i class="devicon-docker-plain"></i> Docker</div>
+        <div class="skill-pill"><i class="devicon-git-plain"></i> Git</div>
+        <div class="skill-pill"><i class="devicon-github-original"></i> GitHub</div>
+      </div>
+    </div>
 
-The technologies, tools and practices I use to build modern,
-secure and scalable software applications.
-
-</p>
-
-</div>
-
-<div class="skills-grid">
-
-<!-- ==================== -->
-<!-- WHAT I WORK WITH -->
-<!-- ==================== -->
-
-<div class="skill-card">
-
-<i class="fa-solid fa-laptop-code"></i>
-
-<h3>What I Work With</h3>
-
-<div class="skill-tags">
-
-<span>Git</span>
-<span>GitHub</span>
-<span>VS Code</span>
-<span>IntelliJ IDEA</span>
-<span>Postman</span>
-<span>Figma</span>
-<span>MySQL Workbench</span>
-<span>Netlify</span>
-
-</div>
-
-</div>
-
-<!-- ==================== -->
-<!-- LANGUAGES -->
-<!-- ==================== -->
-
-<div class="skill-card">
-
-<i class="fa-solid fa-code"></i>
-
-<h3>Programming Languages</h3>
-
-<div class="skill-tags">
-
-<span>Java</span>
-<span>JavaScript</span>
-<span>PHP</span>
-<span>SQL</span>
-<span>HTML5</span>
-<span>CSS3</span>
-
-</div>
-
-</div>
-
-<!-- ==================== -->
-<!-- FRONTEND -->
-<!-- ==================== -->
-
-<div class="skill-card">
-
-<i class="fa-solid fa-desktop"></i>
-
-<h3>Frontend</h3>
-
-<div class="skill-tags">
-
-<span>React</span>
-<span>Responsive Design</span>
-<span>Flexbox</span>
-<span>CSS Grid</span>
-<span>REST API Integration</span>
-<span>UI Development</span>
-<span>Component Architecture</span>
-<span>DOM Manipulation</span>
-
-</div>
-
-</div>
-
-<!-- ==================== -->
-<!-- BACKEND -->
-<!-- ==================== -->
-
-<div class="skill-card">
-
-<i class="fa-solid fa-server"></i>
-
-<h3>Backend</h3>
-
-<div class="skill-tags">
-
-<span>Spring Boot</span>
-<span>Laravel</span>
-<span>Express.js</span>
-<span>REST APIs</span>
-<span>Authentication</span>
-<span>Authorization</span>
-<span>MVC</span>
-<span>CRUD Applications</span>
-
-</div>
-
-</div>
-
-<!-- ==================== -->
-<!-- CLOUD -->
-<!-- ==================== -->
-
-<div class="skill-card">
-
-<i class="fa-solid fa-cloud"></i>
-
-<h3>Cloud & DevOps</h3>
-
-<div class="skill-tags">
-
-<span>Git</span>
-<span>GitHub</span>
-<span>Netlify</span>
-<span>Vercel</span>
-<span>CI/CD Basics</span>
-<span>Deployment</span>
-<span>Version Control</span>
-<span>Linux Basics</span>
-
-</div>
-
-</div>
-
-<!-- ==================== -->
-<!-- SECURITY -->
-<!-- ==================== -->
-
-<div class="skill-card">
-
-<i class="fa-solid fa-shield-halved"></i>
-
-<h3>Cybersecurity</h3>
-
-<div class="skill-tags">
-
-<span>HTTPS</span>
-<span>CORS</span>
-<span>Authentication</span>
-<span>Authorization</span>
-<span>Password Hashing</span>
-<span>Input Validation</span>
-<span>Session Security</span>
-<span>OWASP Top 10</span>
-<span>XSS Prevention</span>
-<span>CSRF Awareness</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+    <div class="skills-block">
+      <div class="skills-label">Cybersecurity</div>
+      <div class="skills-row">
+        <div class="skill-pill">Secure Coding</div>
+        <div class="skill-pill">SQL Injection Prevention</div>
+        <div class="skill-pill">HTTPS &amp; CORS</div>
+        <div class="skill-pill">Server Config Basics</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- =================================== -->
+<!-- ========================= -->
 <!-- PROJECTS -->
-<!-- =================================== -->
+<!-- ========================= -->
 
 <section id="projects">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>Projects</h2>
-
-<p>
-
-Some of the applications I've designed and developed throughout
-my software development journey.
-
-</p>
-
-</div>
-
-<div class="projects-grid">
-  <!-- =================================== -->
-<!-- PROJECT 1 -->
-<!-- =================================== -->
-
-<div class="project-card">
-
-    <div class="project-image">
-        <img src="AmberAlert.png" alt="Amber Alert">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Projects</div>
+      <h2 class="section-title">What I've built</h2>
     </div>
 
-    <div class="project-content">
-
-        <h3>Amber Alert</h3>
-
-        <p>
-
-            A full-stack emergency reporting platform allowing users to
-            report missing persons, crimes and accidents in real time.
-            Built with a focus on usability, secure data handling and
-            scalable backend services.
-
-        </p>
-
-        <div class="tech-stack">
-
-            <span>React</span>
-            <span>JavaScript</span>
-            <span>Express.js</span>
-            <span>MySQL</span>
-            <span>REST API</span>
-
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-num">01</div>
+        <div class="project-name">QuizTick</div>
+        <p class="project-desc">Interactive Unity-based quiz game that reinforces programming knowledge. Focused on engaging gameplay with user feedback, progressive levels, and scoring logic.</p>
+        <div class="project-tags">
+          <span class="tag">C#</span>
+          <span class="tag">Unity</span>
+          <span class="tag">Game Dev</span>
         </div>
+      </div>
 
-        <a class="github-link"
-        href="https://github.com/Moegamat-Tauriq-Osman/amber-alert-RM3"
-        target="_blank">
-
-            View on GitHub
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-    </div>
-
-</div>
-
-<!-- =================================== -->
-<!-- PROJECT 2 -->
-<!-- =================================== -->
-
-<div class="project-card">
-
-    <div class="project-image">
-        <img src="Screenshot 2025-09-12 100225.png" alt="HireHelper">
-    </div>
-
-    <div class="project-content">
-
-        <h3>HireHelper</h3>
-
-        <p>
-
-            A service marketplace connecting customers with local service
-            providers. Includes secure authentication, user management,
-            booking functionality and a modern responsive interface.
-
-        </p>
-
-        <div class="tech-stack">
-
-            <span>React</span>
-            <span>Spring Boot</span>
-            <span>Java</span>
-            <span>Spring Security</span>
-            <span>MySQL</span>
-
+      <div class="project-card">
+        <div class="project-num">02</div>
+        <div class="project-name">HireAHelper</div>
+        <p class="project-desc">Full-stack platform for booking local service providers. Features JWT authentication, booking management, and a fully responsive UI across mobile and desktop.</p>
+        <div class="project-tags">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">React</span>
+          <span class="tag">JWT</span>
+          <span class="tag">REST API</span>
         </div>
+      </div>
 
-        <a class="github-link"
-        href="https://github.com/Moegamat-Tauriq-Osman/HireAHelper"
-        target="_blank">
-
-            View on GitHub
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-    </div>
-
-</div>
-
-<!-- =================================== -->
-<!-- PROJECT 3 -->
-<!-- =================================== -->
-
-<div class="project-card">
-
-    <div class="project-image">
-        <img src="task.jpg" alt="Task Management">
-    </div>
-
-    <div class="project-content">
-
-        <h3>Task Management System</h3>
-
-        <p>
-
-            A Laravel-powered task management platform that enables users
-            to create, organise and monitor projects through an intuitive
-            dashboard with complete CRUD functionality.
-
+      <div class="project-card">
+        <div class="project-num">04</div>
+        <div class="project-name">Rumi Playhouse Website</div>
+        <p class="project-desc">
+          Custom-designed website for an early childhood centre based in Athlone, Cape Town.
+          Developed a warm, elegant, and fully responsive multi-section site featuring an
+          automated hero slideshow, scroll animations, structured admissions process,
+          fee presentation, and contact booking functionality. Built to reflect the school's
+          nurturing philosophy while providing parents with a clear, user-friendly experience.
         </p>
-
-        <div class="tech-stack">
-
-            <span>Laravel</span>
-            <span>PHP</span>
-            <span>Blade</span>
-            <span>MySQL</span>
-
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Responsive Design</span>
+          <span class="tag">UI/UX</span>
         </div>
-
-        <a class="github-link"
-        href="https://github.com/Moegamat-Tauriq-Osman/Task-Management-App"
-        target="_blank">
-
-            View on GitHub
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
+      </div>
     </div>
-
-</div>
-
-<!-- =================================== -->
-<!-- PROJECT 4 -->
-<!-- =================================== -->
-
-<div class="project-card">
-
-    <div class="project-image">
-        <img src="wp9315286.png" alt="PawPoint">
-    </div>
-
-    <div class="project-content">
-
-        <h3>PawPoint</h3>
-
-        <p>
-
-            A booking management platform designed for feline services,
-            featuring dedicated dashboards for administrators and staff,
-            appointment scheduling and customer management.
-
-        </p>
-
-        <div class="tech-stack">
-
-            <span>Laravel</span>
-            <span>PHP</span>
-            <span>Blade</span>
-            <span>MySQL</span>
-
-        </div>
-
-        <a class="github-link"
-        href="https://github.com/Moegamat-Tauriq-Osman/paw-point"
-        target="_blank">
-
-            View on GitHub
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-    </div>
-
-</div>
-
-<!-- =================================== -->
-<!-- PROJECT 5 -->
-<!-- =================================== -->
-
-<div class="project-card">
-
-    <div class="project-image">
-        <img src="fitness.png" alt="Fitness Equipment & Apparel">
-    </div>
-
-    <div class="project-content">
-
-        <h3>Fitness Equipment & Apparel</h3>
-
-        <p>
-
-            A full-stack e-commerce platform for purchasing fitness
-            equipment and apparel featuring product management,
-            categories, shopping functionality and an administrative
-            dashboard.
-
-        </p>
-
-        <div class="tech-stack">
-
-            <span>React</span>
-            <span>Express.js</span>
-            <span>JavaScript</span>
-            <span>MySQL</span>
-
-        </div>
-
-        <a class="github-link"
-        href="https://github.com/Moegamat-Tauriq-Osman/FitnessEquipementApparel"
-        target="_blank">
-
-            View on GitHub
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-    </div>
-
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-<!-- ========================================= -->
+<!-- ========================= -->
 <!-- CONTACT -->
-<!-- ========================================= -->
+<!-- ========================= -->
 
 <section id="contact">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>Let's Connect</h2>
-
-<p>
-
-I'm always open to discussing software development,
-internships, graduate opportunities and exciting new projects.
-
-</p>
-
-</div>
-
-<div style="max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;">
-
-<div class="skill-card">
-
-<i class="fa-brands fa-github"></i>
-
-<h3>GitHub</h3>
-
-<p style="color:var(--muted);margin:15px 0;">
-
-Browse my repositories and personal projects.
-
-</p>
-
-<a class="github-link"
-href="https://github.com/Moegamat-Tauriq-Osman"
-target="_blank">
-
-Visit GitHub
-
-<i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-</a>
-
-</div>
-
-<div class="skill-card">
-
-<i class="fa-brands fa-linkedin"></i>
-
-<h3>LinkedIn</h3>
-
-<p style="color:var(--muted);margin:15px 0;">
-
-Let's connect professionally.
-
-</p>
-
-<a class="github-link"
-href="https://www.linkedin.com/"
-target="_blank">
-
-Visit LinkedIn
-
-<i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-</a>
-
-</div>
-
-<div class="skill-card">
-
-<i class="fa-solid fa-envelope"></i>
-
-<h3>Email</h3>
-
-<p style="color:var(--muted);margin:15px 0;">
-
-Feel free to reach out anytime.
-
-</p>
-
-<a class="github-link"
-href="mailto:moegamattauriqosman@gmail.com">
-
-Send Email
-
-<i class="fa-solid fa-paper-plane"></i>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Contact</div>
+      <h2 class="section-title">Let's work together</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fa-brands fa-github"></i>
+        <h3>GitHub</h3>
+        <p>Browse my repositories and personal projects.</p>
+        <a class="contact-link" href="https://github.com/Moegamat-Tauriq-Osman" target="_blank">
+          Visit GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+      <div class="contact-card">
+        <i class="fa-brands fa-linkedin"></i>
+        <h3>LinkedIn</h3>
+        <p>Let's connect professionally.</p>
+        <a class="contact-link" href="https://www.linkedin.com/" target="_blank">
+          Visit LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+      <div class="contact-card">
+        <i class="fa-solid fa-envelope"></i>
+        <h3>Email</h3>
+        <p>Feel free to reach out anytime.</p>
+        <a class="contact-link" href="mailto:moegamattauriqosman@gmail.com">
+          Send Email <i class="fa-solid fa-paper-plane"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ========================================= -->
+<!-- ========================= -->
 <!-- FOOTER -->
-<!-- ========================================= -->
+<!-- ========================= -->
 
-<footer
-style="padding:50px 0;border-top:1px solid var(--border);text-align:center;">
-
-<div class="container">
-
-<h3 style="margin-bottom:10px;">
-
-Moegamat Tauriq Osman
-
-</h3>
-
-<p style="color:var(--muted);">
-
-Software Developer • Cape Town, South Africa
-
-</p>
-
-<p style="margin-top:25px;color:#777;">
-
-© 2026 All Rights Reserved.
-
-</p>
-
-</div>
-
+<footer>
+  <div class="container">
+    <h3>Moegamat Tauriq Osman</h3>
+    <p>Software Developer • Cape Town, South Africa</p>
+    <p class="copyright">© 2026 All Rights Reserved.</p>
+  </div>
 </footer>
 
-<!-- ========================================= -->
+<!-- ========================= -->
 <!-- JAVASCRIPT -->
-<!-- ========================================= -->
+<!-- ========================= -->
 
 <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.animate([
+          { opacity: 0, transform: "translateY(40px)" },
+          { opacity: 1, transform: "translateY(0)" }
+        ], {
+          duration: 700,
+          fill: "forwards",
+          easing: "ease"
+        });
+      }
+    });
+  }, { threshold: 0.15 });
 
-const observer = new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.animate([
-
-{
-
-opacity:0,
-
-transform:"translateY(40px)"
-
-},
-
-{
-
-opacity:1,
-
-transform:"translateY(0)"
-
-}
-
-],{
-
-duration:700,
-
-fill:"forwards",
-
-easing:"ease"
-
-});
-
-}
-
-});
-
-},
-
-{
-
-threshold:0.15
-
-});
-
-document.querySelectorAll("section,.project-card,.skill-card,.timeline,.stat-card")
-
-.forEach(el=>observer.observe(el));
-
+  document.querySelectorAll("section, .project-card, .exp-card, .skill-pill, .stat-card, .contact-card")
+    .forEach(el => observer.observe(el));
 </script>
 
 </body>
-
-</html>->
+</html>
