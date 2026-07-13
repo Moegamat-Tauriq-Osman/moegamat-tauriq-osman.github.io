@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moegamat Tauriq Osman</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    /* ── Reset & Base ── */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: #080808;
@@ -20,40 +29,73 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    ::selection { background: #8b5cf6; color: #fff; }
 
-    a { text-decoration: none; color: inherit; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+    ::selection {
+      background: #8b5cf6;
+      color: #fff;
+    }
 
-    /* ── Scrollbar ── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #111; }
-    ::-webkit-scrollbar-thumb { background: #333; border-radius: 12px; }
-    ::-webkit-scrollbar-thumb:hover { background: #8b5cf6; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-    /* ── Reveal Animations ── */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #111;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 12px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8b5cf6;
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     .reveal-left {
       opacity: 0;
       transform: translateX(-30px);
       transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal-left.in-view { opacity: 1; transform: translateX(0); }
+
+    .reveal-left.in-view {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
     .reveal-right {
       opacity: 0;
       transform: translateX(30px);
       transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal-right.in-view { opacity: 1; transform: translateX(0); }
 
-    /* ── Buttons ── */
+    .reveal-right.in-view {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -67,34 +109,36 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
+
     .btn-primary {
       background: linear-gradient(135deg, #8b5cf6, #6d28d9);
       color: #fff;
       box-shadow: 0 4px 24px rgba(139, 92, 246, 0.3);
     }
+
     .btn-primary:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 40px rgba(139, 92, 246, 0.45);
     }
+
     .btn-outline {
       background: transparent;
       color: #eaeaea;
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
+
     .btn-outline:hover {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(255,255,255,0.25);
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.25);
       transform: translateY(-3px);
     }
+
     .btn-small {
       padding: 8px 18px;
       font-size: 0.75rem;
       border-radius: 40px;
     }
 
-    /* ──────────────────────────────────────────────
-                HERO
-        ────────────────────────────────────────────── */
     header {
       min-height: 100vh;
       display: flex;
@@ -104,13 +148,13 @@
       background: #080808;
     }
 
-    /* Glow orbs */
     header .orb {
       position: absolute;
       border-radius: 50%;
       filter: blur(120px);
       pointer-events: none;
     }
+
     header .orb-1 {
       width: 500px;
       height: 500px;
@@ -118,6 +162,7 @@
       right: -100px;
       background: rgba(139, 92, 246, 0.12);
     }
+
     header .orb-2 {
       width: 400px;
       height: 400px;
@@ -157,6 +202,7 @@
       letter-spacing: -0.03em;
       margin-bottom: 16px;
     }
+
     .hero-content h1 .highlight {
       background: linear-gradient(135deg, #a78bfa, #8b5cf6, #6d28d9);
       -webkit-background-clip: text;
@@ -172,7 +218,11 @@
       line-height: 1.7;
     }
 
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
     .hero-nav {
       margin-top: 36px;
@@ -180,6 +230,7 @@
       gap: 6px;
       flex-wrap: wrap;
     }
+
     .hero-nav a {
       font-size: 0.8rem;
       font-weight: 500;
@@ -189,22 +240,24 @@
       transition: all 0.25s;
       letter-spacing: 0.2px;
     }
+
     .hero-nav a:hover {
       color: #eaeaea;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
     }
 
-    /* Hero right – Avatar / visual */
     .hero-visual {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .hero-avatar-wrap {
       position: relative;
       width: 320px;
       height: 320px;
     }
+
     .hero-avatar-wrap .ring {
       position: absolute;
       inset: -12px;
@@ -212,13 +265,19 @@
       border: 1px solid rgba(139, 92, 246, 0.2);
       animation: spin 30s linear infinite;
     }
+
     .hero-avatar-wrap .ring:nth-child(2) {
       inset: -24px;
       border-color: rgba(139, 92, 246, 0.08);
       animation-duration: 45s;
       animation-direction: reverse;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     .hero-avatar {
       width: 100%;
@@ -229,6 +288,7 @@
       box-shadow: 0 0 80px rgba(139, 92, 246, 0.06);
       background: #141414;
     }
+
     .hero-avatar img {
       width: 100%;
       height: 100%;
@@ -236,7 +296,6 @@
       display: block;
     }
 
-    /* floating status dot */
     .status-dot {
       position: absolute;
       bottom: 12px;
@@ -249,16 +308,28 @@
       box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
       animation: pulse-dot 2s ease-in-out infinite;
     }
+
     @keyframes pulse-dot {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.15); opacity: 0.7; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.15);
+        opacity: 0.7;
+      }
     }
 
-    /* ──────────────────────────────────────────────
-                SECTIONS
-        ────────────────────────────────────────────── */
-    section { padding: 100px 0; }
-    section.alt { background: #0e0e0e; }
+    section {
+      padding: 100px 0;
+    }
+
+    section.alt {
+      background: #0e0e0e;
+    }
 
     .section-label {
       font-size: 0.7rem;
@@ -288,36 +359,47 @@
     .section-header {
       margin-bottom: 52px;
     }
-    .section-header.centered { text-align: center; }
-    .section-header.centered .section-sub { margin: 0 auto; }
 
-    /* ── About ── */
+    .section-header.centered {
+      text-align: center;
+    }
+
+    .section-header.centered .section-sub {
+      margin: 0 auto;
+    }
+
     #about .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
       align-items: start;
     }
+
     #about .about-text p {
       color: #b0b0b0;
       font-size: 1.05rem;
       line-height: 1.8;
       margin-bottom: 16px;
     }
-    #about .about-text p strong { color: #eaeaea; }
+
+    #about .about-text p strong {
+      color: #eaeaea;
+    }
 
     .about-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
+
     .stat-card {
       background: #121212;
       padding: 24px 20px;
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.04);
+      border: 1px solid rgba(255, 255, 255, 0.04);
       text-align: center;
     }
+
     .stat-card .number {
       font-size: 2rem;
       font-weight: 700;
@@ -327,13 +409,13 @@
       display: block;
       line-height: 1.2;
     }
+
     .stat-card .label {
       font-size: 0.8rem;
       color: #888;
       font-weight: 400;
     }
 
-    /* ── Experience ── */
     .exp-timeline {
       display: flex;
       flex-direction: column;
@@ -342,12 +424,14 @@
       margin: 0 auto;
       position: relative;
       padding-left: 32px;
-      border-left: 1px solid rgba(255,255,255,0.06);
+      border-left: 1px solid rgba(255, 255, 255, 0.06);
     }
+
     .exp-item {
       padding: 20px 0 20px 32px;
       position: relative;
     }
+
     .exp-item::before {
       content: '';
       position: absolute;
@@ -360,6 +444,7 @@
       border: 3px solid #080808;
       box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
     }
+
     .exp-item .meta {
       font-size: 0.75rem;
       font-weight: 500;
@@ -367,23 +452,27 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
+
     .exp-item h3 {
       font-size: 1.05rem;
       font-weight: 600;
       color: #f0f0f0;
       margin: 2px 0 4px;
     }
+
     .exp-item p {
       font-size: 0.92rem;
       color: #999;
       line-height: 1.6;
     }
 
-    /* ── Skills (Pill Style) ── */
     .skills-block {
       margin-bottom: 36px;
     }
-    .skills-block:last-of-type { margin-bottom: 0; }
+
+    .skills-block:last-of-type {
+      margin-bottom: 0;
+    }
 
     .skills-label {
       font-size: 0.8rem;
@@ -407,7 +496,7 @@
       gap: 8px;
       padding: 8px 18px;
       background: #121212;
-      border: 1px solid rgba(255,255,255,0.06);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 40px;
       font-size: 0.85rem;
       font-weight: 500;
@@ -415,62 +504,75 @@
       transition: all 0.2s ease;
       cursor: default;
     }
+
     .skill-pill i {
       font-size: 1.2rem;
       color: #a78bfa;
       transition: color 0.2s ease;
     }
+
     .skill-pill:hover {
       background: #8b5cf6;
       color: #fff;
       border-color: #8b5cf6;
       transform: translateY(-2px);
     }
+
     .skill-pill:hover i {
       color: #fff;
     }
 
-    /* ── Projects ── */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 28px;
     }
+
     .project {
       background: #121212;
       border-radius: 20px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.04);
+      border: 1px solid rgba(255, 255, 255, 0.04);
       transition: all 0.4s ease;
       display: flex;
       flex-direction: column;
     }
+
     .project:hover {
       transform: translateY(-8px);
       border-color: rgba(139, 92, 246, 0.15);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
+
     .project .project-img {
       height: 200px;
       background: #1a1a1a;
       overflow: hidden;
       position: relative;
     }
+
     .project .project-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    .project:hover .project-img img { transform: scale(1.04); }
+
+    .project:hover .project-img img {
+      transform: scale(1.04);
+    }
+
     .project .project-img .overlay-grad {
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, rgba(8,8,8,0.6) 0%, transparent 60%);
+      background: linear-gradient(0deg, rgba(8, 8, 8, 0.6) 0%, transparent 60%);
       opacity: 0;
       transition: opacity 0.4s;
     }
-    .project:hover .project-img .overlay-grad { opacity: 1; }
+
+    .project:hover .project-img .overlay-grad {
+      opacity: 1;
+    }
 
     .project .project-body {
       padding: 22px 24px 24px;
@@ -478,27 +580,31 @@
       display: flex;
       flex-direction: column;
     }
+
     .project .project-body h3 {
       font-size: 1.1rem;
       font-weight: 600;
       color: #f0f0f0;
       margin-bottom: 4px;
     }
+
     .project .project-body .tech-tags {
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
       margin-bottom: 10px;
     }
+
     .project .project-body .tech-tags span {
       font-size: 0.65rem;
       font-weight: 500;
       color: #888;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       padding: 2px 12px;
       border-radius: 40px;
-      border: 1px solid rgba(255,255,255,0.04);
+      border: 1px solid rgba(255, 255, 255, 0.04);
     }
+
     .project .project-body p {
       font-size: 0.9rem;
       color: #999;
@@ -506,6 +612,7 @@
       margin-bottom: 16px;
       flex: 1;
     }
+
     .project .project-body .project-links {
       display: flex;
       gap: 8px;
@@ -519,6 +626,7 @@
       gap: 14px;
       flex-wrap: wrap;
     }
+
     #contact .social-links a {
       display: inline-flex;
       align-items: center;
@@ -527,12 +635,16 @@
       border-radius: 60px;
       background: #121212;
       color: #eaeaea;
-      border: 1px solid rgba(255,255,255,0.05);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       font-weight: 500;
       font-size: 0.9rem;
       transition: all 0.3s ease;
     }
-    #contact .social-links a i { font-size: 1.1rem; }
+
+    #contact .social-links a i {
+      font-size: 1.1rem;
+    }
+
     #contact .social-links a:hover {
       background: #8b5cf6;
       color: #fff;
@@ -541,347 +653,422 @@
       box-shadow: 0 8px 32px rgba(139, 92, 246, 0.25);
     }
 
-    /* ── Footer ── */
     footer {
       padding: 32px 0;
       text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
       color: #555;
       font-size: 0.8rem;
     }
 
-    /* ──────────────────────────────────────────────
-                RESPONSIVE
-        ────────────────────────────────────────────── */
     @media (max-width: 960px) {
-      .hero { grid-template-columns: 1fr; text-align: center; gap: 32px; }
-      .hero-content .lead { max-width: 100%; margin-left: auto; margin-right: auto; }
-      .hero-actions { justify-content: center; }
-      .hero-nav { justify-content: center; }
-      .hero-avatar-wrap { width: 240px; height: 240px; }
-      #about .about-grid { grid-template-columns: 1fr; gap: 36px; }
-      .about-stats { grid-template-columns: 1fr 1fr; }
-      .section-header.centered .section-sub { max-width: 100%; }
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 32px;
+      }
+
+      .hero-content .lead {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-nav {
+        justify-content: center;
+      }
+
+      .hero-avatar-wrap {
+        width: 240px;
+        height: 240px;
+      }
+
+      #about .about-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-header.centered .section-sub {
+        max-width: 100%;
+      }
     }
 
     @media (max-width: 640px) {
-      .hero-content h1 { font-size: 2.6rem; }
-      .hero-avatar-wrap { width: 180px; height: 180px; }
-      section { padding: 64px 0; }
-      h2 { font-size: 1.8rem; }
-      .projects-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-      .about-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .stat-card { padding: 16px; }
-      .stat-card .number { font-size: 1.4rem; }
-      .exp-timeline { padding-left: 20px; }
-      .exp-item { padding-left: 20px; }
-      .exp-item::before { left: -29px; width: 10px; height: 10px; }
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+
+      .hero-avatar-wrap {
+        width: 180px;
+        height: 180px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .stat-card {
+        padding: 16px;
+      }
+
+      .stat-card .number {
+        font-size: 1.4rem;
+      }
+
+      .exp-timeline {
+        padding-left: 20px;
+      }
+
+      .exp-item {
+        padding-left: 20px;
+      }
+
+      .exp-item::before {
+        left: -29px;
+        width: 10px;
+        height: 10px;
+      }
     }
 
     @media (max-width: 420px) {
-      .hero-content h1 { font-size: 2rem; }
-      .hero-avatar-wrap { width: 140px; height: 140px; }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-avatar-wrap {
+        width: 140px;
+        height: 140px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ─── HERO ─── -->
-<header>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
+  <!-- HERO -->
+  <header>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
 
-  <div class="container hero">
-    <div class="hero-content reveal">
-      <span class="tag">✦ Available for opportunities</span>
-      <h1>Moegamat<br><span class="highlight">Tauriq Osman</span></h1>
-      <p class="lead">ICT Applications Development graduate building scalable, secure, and user-focused software — from full-stack web apps to backend architecture.</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-outline">Contact</a>
-      </div>
-      <div class="hero-nav">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-
-    <div class="hero-visual reveal-right">
-      <div class="hero-avatar-wrap">
-        <div class="ring"></div>
-        <div class="ring"></div>
-        <div class="hero-avatar">
-          <img src="IMG-20230819-WA0018.jpg" alt="Moegamat Tauriq Osman" />
+    <div class="container hero">
+      <div class="hero-content reveal">
+        <span class="tag">✦ Available for opportunities</span>
+        <h1>Moegamat<br><span class="highlight">Tauriq Osman</span></h1>
+        <p class="lead">ICT Applications Development graduate building scalable, secure, and user-focused software —
+          from full-stack web apps to backend architecture.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact</a>
         </div>
-        <div class="status-dot"></div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- ─── ABOUT ─── -->
-<section id="about" class="reveal">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label"><h2>About</h2></span>
-    </div>
-
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          I'm a <strong>developer</strong> driven by a passion for technology and coding. I’m constantly exploring how development can create real-world impact.
-          With curiosity and a commitment to continuous learning, I’m on a journey to build innovative, user‑friendly solutions.
-          My work spans both <strong>frontend</strong> and <strong>backend</strong> development, allowing me to transform ideas into complete, functional web applications.
-        </p>
-        <p>
-          I believe great software is built with intention — combining robust architecture with
-          thoughtful user experience. I'm constantly exploring new tools and patterns to build
-          solutions that genuinely help people.
-        </p>
-      </div>
-
-      <div class="about-stats">
-        <div class="stat-card">
-          <span class="number">5+</span>
-          <span class="label">Projects Built</span>
-        </div>
-        <div class="stat-card">
-          <span class="number">5</span>
-          <span class="label">Tech Stacks</span>
-        </div>
-        <div class="stat-card">
-          <span class="number">2</span>
-          <span class="label">Years Learning</span>
-        </div>
-        <div class="stat-card">
-          <span class="number">∞</span>
-          <span class="label">Curiosity</span>
+        <div class="hero-nav">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ─── EXPERIENCE ─── -->
-<section id="experience" class="alt reveal">
-  <div class="container">
-    <div class="section-header centered">
-      <span class="section-label">Experience</span>
-      <h2>My Path So Far</h2>
-      <p class="section-sub">A timeline of the skills and knowledge I've built along the way.</p>
-    </div>
-
-    <div class="exp-timeline">
-      <div class="exp-item">
-        <span class="meta">2023 – 2025</span>
-        <h3>Diploma in ICT Applications Development</h3>
-        <p>
-          Successfully completed a Diploma in ICT Applications Development. Gained foundational knowledge of software engineering principles.
-          Built client-server Java applications following common software design patterns.
-          Worked with and implemented relational databases with SQL; practiced data modelling and queries.
-          Worked with various frameworks like React, Laravel and Spring.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── SKILLS (UPDATED PILL STYLE) ─── -->
-<section id="skills" class="reveal">
-  <div class="container">
-    <div class="section-header centered">
-      <span class="section-label">Skills</span>
-      <h2>What I work with</h2>
-      <p class="section-sub">A selection of technologies and tools I use daily.</p>
-    </div>
-
-    <div class="skills-block">
-      <div class="skills-label">Languages</div>
-      <div class="skills-row">
-        <div class="skill-pill"><i class="devicon-java-plain"></i> Java</div>
-        <div class="skill-pill"><i class="devicon-javascript-plain"></i> JavaScript</div>
-        <div class="skill-pill"><i class="devicon-php-plain"></i> PHP</div>
-        <div class="skill-pill"><i class="devicon-mysql-plain"></i> SQL</div>
-      </div>
-    </div>
-
-    <div class="skills-block">
-      <div class="skills-label">Frontend</div>
-      <div class="skills-row">
-        <div class="skill-pill"><i class="devicon-react-original"></i> React</div>
-        <div class="skill-pill"><i class="devicon-html5-plain"></i> HTML5</div>
-        <div class="skill-pill"><i class="devicon-css3-plain"></i> CSS3</div>
-      </div>
-    </div>
-
-    <div class="skills-block">
-      <div class="skills-label">Backend</div>
-      <div class="skills-row">
-        <div class="skill-pill"><i class="devicon-spring-plain"></i> Spring Boot</div>
-        <div class="skill-pill"><i class="devicon-laravel-plain"></i> Laravel</div>
-      </div>
-    </div>
-
-    <div class="skills-block">
-      <div class="skills-label">Design &amp; Tools</div>
-      <div class="skills-row">
-        <div class="skill-pill"><i class="fa-brands fa-figma"></i> Figma</div>
-        <div class="skill-pill"><i class="devicon-git-plain"></i> Git</div>
-        <div class="skill-pill"><i class="devicon-github-original"></i> GitHub</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── PROJECTS ─── -->
-<section id="projects" class="alt reveal">
-  <div class="container">
-    <div class="section-header centered">
-      <span class="section-label">Projects</span>
-      <h2>Things I've Built</h2>
-      <p class="section-sub">Each project reflects a different challenge, stack, and lesson learned.</p>
-    </div>
-
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <div class="project">
-        <div class="project-img">
-          <img src="AmberAlert.png" alt="Amber Alert" />
-          <div class="overlay-grad"></div>
-        </div>
-        <div class="project-body">
-          <h3>Amber Alert</h3>
-          <div class="tech-tags">
-            <span>React</span><span>Express</span><span>Database</span>
+      <div class="hero-visual reveal-right">
+        <div class="hero-avatar-wrap">
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="hero-avatar">
+            <img src="IMG-20230819-WA0018.jpg" alt="Moegamat Tauriq Osman" />
           </div>
-          <p>Real-time reporting for missing persons, accidents, and crimes.</p>
-          <div class="project-links">
-            <a href="https://github.com/Moegamat-Tauriq-Osman/amber-alert-RM3" class="btn btn-small btn-outline">GitHub</a>
-          </div>
+          <div class="status-dot"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">
+          <h2>About</h2>
+        </span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a <strong>developer</strong> driven by a passion for technology and coding. I’m constantly exploring how
+            development can create real-world impact.
+            With curiosity and a commitment to continuous learning, I’m on a journey to build innovative, user‑friendly
+            solutions.
+            My work spans both <strong>frontend</strong> and <strong>backend</strong> development, allowing me to
+            transform ideas into complete, functional web applications.
+          </p>
+          <p>
+            I believe great software is built with intention — combining robust architecture with
+            thoughtful user experience. I'm constantly exploring new tools and patterns to build
+            solutions that genuinely help people.
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="alt reveal">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Experience</span>
+        <h2>My Experience</h2>
+      </div>
+
+      <div class="exp-timeline">
+        <div class="exp-item">
+          <span class="meta">2023 – 2025</span>
+          <h3>Diploma in ICT Applications Development</h3>
+          <p>
+            Successfully completed a Diploma in ICT Applications Development. Gained foundational knowledge of software
+            engineering principles.
+            Built client-server Java applications following common software design patterns.
+            Worked with and implemented relational databases with SQL; practiced data modelling and queries.
+            Worked with various frameworks like React, Laravel and Spring.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="reveal">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Skills</span>
+        <h2>What I work with</h2>
+      </div>
+
+      <div class="skills-block">
+        <div class="skills-label">Languages</div>
+        <div class="skills-row">
+          <div class="skill-pill"><i class="devicon-java-plain"></i> Java</div>
+          <div class="skill-pill"><i class="devicon-javascript-plain"></i> JavaScript</div>
+          <div class="skill-pill"><i class="devicon-php-plain"></i> PHP</div>
+          <div class="skill-pill"><i class="devicon-mysql-plain"></i> SQL</div>
         </div>
       </div>
 
-      <!-- Project 2 -->
-      <div class="project">
-        <div class="project-img">
-          <img src="Screenshot 2025-09-12 100225.png" alt="HireHelper" />
-          <div class="overlay-grad"></div>
+      <div class="skills-block">
+        <div class="skills-label">Frontend</div>
+        <div class="skills-row">
+          <div class="skill-pill"><i class="devicon-react-original"></i> React</div>
+          <div class="skill-pill"><i class="devicon-laravel-plain"></i> Laravel</div>
+          <div class="skill-pill"><i class="devicon-html5-plain"></i> HTML5</div>
+          <div class="skill-pill"><i class="devicon-css3-plain"></i> CSS3</div>
         </div>
-        <div class="project-body">
-          <h3>HireHelper</h3>
-          <div class="tech-tags">
-            <span>Spring Boot</span><span>React</span><span>Security</span>
+      </div>
+
+      <div class="skills-block">
+        <div class="skills-label">Backend</div>
+        <div class="skills-row">
+          <div class="skill-pill"><i class="devicon-spring-plain"></i> Spring Boot</div>
+          <div class="skill-pill"><i class="devicon-dotnetcore-plain"></i>API</div>
+          <div class="skill-pill"><i class="devicon-json-plain"></i> JWT Auth</div>
+        </div>
+      </div>
+
+      <div class="skills-block">
+        <div class="skills-label">Cloud &amp; DevOps</div>
+        <div class="skills-row">
+          <div class="skill-pill"><i class="devicon-git-plain"></i> Git</div>
+          <div class="skill-pill"><i class="devicon-github-original"></i> GitHub</div>
+        </div>
+      </div>
+
+      <div class="skills-block">
+        <div class="skills-label">Security</div>
+        <div class="skills-row">
+          <div class="skill-pill">Secure Coding</div>
+          <div class="skill-pill">SQL Injection Prevention</div>
+          <div class="skill-pill">HTTPS &amp; CORS</div>
+          <div class="skill-pill">Server Config Basics</div>
+        </div>
+      </div>
+
+      <div class="skills-block">
+        <div class="skills-label">Design &amp; Tools</div>
+        <div class="skills-row">
+          <div class="skill-pill"><i class="fa-brands fa-figma"></i> Figma</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="alt reveal">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Projects</span>
+        <h2>Things I've Built</h2>
+        <p class="section-sub">Each project reflects a different challenge, stack, and lesson learned.</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project">
+          <div class="project-img">
+            <img src="AmberAlert.png" alt="Amber Alert" />
+            <div class="overlay-grad"></div>
           </div>
-          <p>Connecting clients to local service providers with secure auth.</p>
-          <div class="project-links">
-            <a href="https://github.com/Moegamat-Tauriq-Osman/HireAHelper" class="btn btn-small btn-outline">GitHub</a>
+          <div class="project-body">
+            <h3>Amber Alert</h3>
+            <div class="tech-tags">
+              <span>React</span><span>Express</span><span>Database</span>
+            </div>
+            <p>Real-time reporting for missing persons, accidents, and crimes.</p>
+            <div class="project-links">
+              <a href="https://github.com/Moegamat-Tauriq-Osman/amber-alert-RM3"
+                class="btn btn-small btn-outline">GitHub</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Project 3 -->
-      <div class="project">
-        <div class="project-img">
-          <img src="task.jpg" alt="Task Manager" />
-          <div class="overlay-grad"></div>
-        </div>
-        <div class="project-body">
-          <h3>Task Management</h3>
-          <div class="tech-tags">
-            <span>Laravel</span><span>PHP</span><span>Blade</span>
+        <div class="project">
+          <div class="project-img">
+            <img src="Screenshot 2025-09-12 100225.png" alt="HireHelper" />
+            <div class="overlay-grad"></div>
           </div>
-          <p>Efficiently manage and assign tasks with a clean dashboard.</p>
-          <div class="project-links">
-            <a href="https://github.com/Moegamat-Tauriq-Osman/Task-Management-App" class="btn btn-small btn-outline">GitHub</a>
+          <div class="project-body">
+            <h3>HireHelper</h3>
+            <div class="tech-tags">
+              <span>Spring Boot</span><span>React</span><span>Security</span>
+            </div>
+            <p>Connecting clients to local service providers with secure auth.</p>
+            <div class="project-links">
+              <a href="https://github.com/Moegamat-Tauriq-Osman/HireAHelper"
+                class="btn btn-small btn-outline">GitHub</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Project 4 -->
-      <div class="project">
-        <div class="project-img">
-          <img src="wp9315286.png" alt="PawPoint" />
-          <div class="overlay-grad"></div>
-        </div>
-        <div class="project-body">
-          <h3>PawPoint</h3>
-          <div class="tech-tags">
-            <span>Laravel</span><span>PHP</span><span>Blade</span>
+        <div class="project">
+          <div class="project-img">
+            <img src="task.jpg" alt="Task Manager" />
+            <div class="overlay-grad"></div>
           </div>
-          <p>Feline service booking with admin &amp; staff dashboards.</p>
-          <div class="project-links">
-            <a href="https://github.com/Moegamat-Tauriq-Osman/paw-point" class="btn btn-small btn-outline">GitHub</a>
+          <div class="project-body">
+            <h3>Task Management</h3>
+            <div class="tech-tags">
+              <span>Laravel</span><span>PHP</span><span>Blade</span>
+            </div>
+            <p>Efficiently manage and assign tasks with a clean dashboard.</p>
+            <div class="project-links">
+              <a href="https://github.com/Moegamat-Tauriq-Osman/Task-Management-App"
+                class="btn btn-small btn-outline">GitHub</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Project 5 -->
-      <div class="project">
-        <div class="project-img">
-          <img src="fitness.png" alt="Fitness Equipment" />
-          <div class="overlay-grad"></div>
-        </div>
-        <div class="project-body">
-          <h3>Fitness Equipment &amp; Apparel</h3>
-          <div class="tech-tags">
-            <span>React</span><span>Express</span><span>E-commerce</span>
+        <div class="project">
+          <div class="project-img">
+            <img src="wp9315286.png" alt="PawPoint" />
+            <div class="overlay-grad"></div>
           </div>
-          <p>Online store for fitness gear with an admin dashboard.</p>
-          <div class="project-links">
-            <a href="https://github.com/Moegamat-Tauriq-Osman/FitnessEquipementApparel.git" class="btn btn-small btn-outline">GitHub</a>
+          <div class="project-body">
+            <h3>PawPoint</h3>
+            <div class="tech-tags">
+              <span>Laravel</span><span>PHP</span><span>Blade</span>
+            </div>
+            <p>Feline service booking with admin &amp; staff dashboards.</p>
+            <div class="project-links">
+              <a href="https://github.com/Moegamat-Tauriq-Osman/paw-point" class="btn btn-small btn-outline">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-img">
+            <img src="fitness.png" alt="Fitness Equipment" />
+            <div class="overlay-grad"></div>
+          </div>
+          <div class="project-body">
+            <h3>Fitness Equipment &amp; Apparel</h3>
+            <div class="tech-tags">
+              <span>React</span><span>Express</span><span>E-commerce</span>
+            </div>
+            <p>Online store for fitness gear with an admin dashboard.</p>
+            <div class="project-links">
+              <a href="https://github.com/Moegamat-Tauriq-Osman/FitnessEquipementApparel.git"
+                class="btn btn-small btn-outline">GitHub</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ─── CONTACT ─── -->
-<section id="contact" class="reveal">
-  <div class="container">
-    <div class="section-header centered">
-      <span class="section-label">Connect</span>
-      <h2>Let's Work Together</h2>
-      <p class="section-sub">I'm always open to new opportunities, collaborations, or just a good conversation.</p>
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Connect</span>
+        <h2>Let's Work Together</h2>
+        <p class="section-sub">I'm always open to new opportunities, collaborations, or just a good conversation.</p>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="mailto:moegamattauriqosman@gmail.com">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </div>
     </div>
+  </section>
 
-    <div class="social-links">
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
-        <i class="fab fa-linkedin-in"></i> LinkedIn
-      </a>
-      <a href="https://github.com/" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i> GitHub
-      </a>
-      <a href="mailto:moegamattauriqosman@gmail.com">
-        <i class="fas fa-envelope"></i> Email
-      </a>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Moegamat Tauriq Osman</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ─── FOOTER ─── -->
-<footer>
-  <div class="container">
-    <p>© 2025 Moegamat Tauriq Osman</p>
-  </div>
-</footer>
+  <!-- SCRIPTS -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.12 });
 
-<!-- ─── SCRIPTS ─── -->
-<script>
-  // ── Reveal on scroll ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-</script>
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+  </script>
 
 </body>
+
 </html>
