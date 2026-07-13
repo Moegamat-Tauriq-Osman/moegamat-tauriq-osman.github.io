@@ -671,64 +671,138 @@
 <!-- ─── SKILLS ─── -->
 <section id="skills" class="reveal">
   <div class="container">
+
     <div class="section-header centered">
       <span class="section-label">Skills</span>
       <h2>Tools & Technologies</h2>
-      <p class="section-sub">Click any card to learn more about what I work with.</p>
+      <p class="section-sub">
+        Click any card to learn more about what I work with.
+      </p>
     </div>
 
-    <div class="skills-grid">
-      <div class="skill-card" onclick="toggleSkill(this)">
-        <i class="devicon-java-plain skill-icon"></i>
-        <span class="skill-name">Java</span>
-        <span class="skill-desc">OOP, collections, threads &amp; backend APIs.</span>
-      </div>
-      <div class="skill-card" onclick="toggleSkill(this)">
-        <i class="devicon-spring-plain skill-icon"></i>
-        <span class="skill-name">Spring Boot</span>
-        <span class="skill-desc">REST APIs, security &amp; production-ready apps.</span>
-      </div>
-      <div class="skill-card" onclick="toggleSkill(this)">
-        <i class="devicon-react-original skill-icon"></i>
-        <span class="skill-name">React</span>
-        <span class="skill-desc">Component-based UIs with hooks &amp; state.</span>
-      </div>
-      <div class="skill-card" onclick="toggleSkill(this)">
-        <i class="devicon-php-plain skill-icon"></i>
-        <span class="skill-name">PHP</span>
-        <span class="skill-desc">Backend scripting &amp; CRUD web apps.</span>
-      </div>
-      <div class="skill-card" onclick="toggleSkill(this)">
-        <i class="devicon-laravel-plain skill-icon"></i>
-        <span class="skill-name">Laravel</span>
-        <span class="skill-desc">Modern MVC framework for robust apps.</span>
-      </div>
-      <div class="skill-card" onclick="toggleSkill(this)">
-        <i class="devicon-javascript-plain skill-icon"></i>
-        <span class="skill-name">JavaScript</span>
-        <span class="skill-desc">DOM manipulation, async logic &amp; APIs.</span>
-      </div>
-      <div class="skill-card" onclick="toggleSkill(this)">
-        <i class="devicon-mysql-plain skill-icon"></i>
-        <span class="skill-name">SQL</span>
-        <span class="skill-desc">Database design, queries &amp; optimization.</span>
-      </div>
-      <div class="skill-card" onclick="toggleSkill(this)">
-        <i class="devicon-html5-plain skill-icon"></i>
-        <span class="skill-name">HTML</span>
-        <span class="skill-desc">Semantic, accessible structure.</span>
-      </div>
-      <div class="skill-card" onclick="toggleSkill(this)">
-        <i class="devicon-css3-plain skill-icon"></i>
-        <span class="skill-name">CSS</span>
-        <span class="skill-desc">Flexbox, Grid &amp; responsive layouts.</span>
-      </div>
-      <div class="skill-card" onclick="toggleSkill(this)">
-        <i class="fa-brands fa-figma skill-icon"></i>
-        <span class="skill-name">Figma</span>
-        <span class="skill-desc">UI/UX design &amp; prototyping.</span>
+    <!-- Languages -->
+    <div class="skills-block">
+      <h3 class="skills-label">Languages</h3>
+
+      <div class="skills-grid">
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="devicon-java-plain skill-icon"></i>
+          <span class="skill-name">Java</span>
+          <span class="skill-desc">
+            Object-oriented programming, collections, multithreading and backend development.
+          </span>
+        </div>
+
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="devicon-javascript-plain skill-icon"></i>
+          <span class="skill-name">JavaScript</span>
+          <span class="skill-desc">
+            Modern ES6+, asynchronous programming, DOM manipulation and APIs.
+          </span>
+        </div>
+
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="devicon-php-plain skill-icon"></i>
+          <span class="skill-name">PHP</span>
+          <span class="skill-desc">
+            Server-side scripting and CRUD web applications.
+          </span>
+        </div>
+
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="devicon-mysql-plain skill-icon"></i>
+          <span class="skill-name">SQL</span>
+          <span class="skill-desc">
+            Database design, complex queries and relational databases.
+          </span>
+        </div>
       </div>
     </div>
+
+    <!-- Frontend -->
+    <div class="skills-block">
+      <h3 class="skills-label">Frontend</h3>
+
+      <div class="skills-grid">
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="devicon-react-original skill-icon"></i>
+          <span class="skill-name">React</span>
+          <span class="skill-desc">
+            Building modern component-based user interfaces with hooks and state.
+          </span>
+        </div>
+
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="devicon-html5-plain skill-icon"></i>
+          <span class="skill-name">HTML5</span>
+          <span class="skill-desc">
+            Semantic, accessible and SEO-friendly markup.
+          </span>
+        </div>
+
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="devicon-css3-plain skill-icon"></i>
+          <span class="skill-name">CSS3</span>
+          <span class="skill-desc">
+            Responsive layouts using Flexbox, Grid and modern CSS.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backend -->
+    <div class="skills-block">
+      <h3 class="skills-label">Backend</h3>
+
+      <div class="skills-grid">
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="devicon-spring-plain skill-icon"></i>
+          <span class="skill-name">Spring Boot</span>
+          <span class="skill-desc">
+            REST APIs, authentication and enterprise Java applications.
+          </span>
+        </div>
+
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="devicon-laravel-plain skill-icon"></i>
+          <span class="skill-name">Laravel</span>
+          <span class="skill-desc">
+            MVC architecture, routing, authentication and Eloquent ORM.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Database -->
+    <div class="skills-block">
+      <h3 class="skills-label">Database</h3>
+
+      <div class="skills-grid">
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="devicon-mysql-plain skill-icon"></i>
+          <span class="skill-name">MySQL</span>
+          <span class="skill-desc">
+            Database design, indexing and efficient data management.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="skills-block">
+      <h3 class="skills-label">Tools & Design</h3>
+
+      <div class="skills-grid">
+        <div class="skill-card" onclick="toggleSkill(this)">
+          <i class="fa-brands fa-figma skill-icon"></i>
+          <span class="skill-name">Figma</span>
+          <span class="skill-desc">
+            UI/UX design, wireframes and interactive prototypes.
+          </span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
