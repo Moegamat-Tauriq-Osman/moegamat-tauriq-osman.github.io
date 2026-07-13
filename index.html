@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moegamat Tauriq Osman</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -367,16 +368,13 @@
       margin: 0 auto;
     }
 
-
-    /* ── About Grid ── */
     #about .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
-      align-items: center;
+      align-items: start;
     }
 
-    /* ── About Text ── */
     #about .about-text p {
       color: #b0b0b0;
       font-size: 1.05rem;
@@ -385,138 +383,37 @@
     }
 
     #about .about-text p strong {
-      color: #f0f0f0;
+      color: #eaeaea;
     }
 
-    /* ── Code Window ── */
-    .about-code {
-      width: 100%;
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
     }
 
-    .code-window {
-      background: #0d0d0d;
-      border-radius: 12px;
-      border: 1px solid #2a2a2a;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .stat-card {
+      background: #121212;
+      padding: 24px 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      text-align: center;
     }
 
-    .code-window:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 30px 80px rgba(139, 92, 246, 0.08);
+    .stat-card .number {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      line-height: 1.2;
     }
 
-    .code-window-header {
-      background: #1a1a1a;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-bottom: 1px solid #2a2a2a;
-    }
-
-    .code-window-header .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .code-window-header .dot.red {
-      background: #ff5f56;
-    }
-
-    .code-window-header .dot.yellow {
-      background: #ffbd2e;
-    }
-
-    .code-window-header .dot.green {
-      background: #27c93f;
-    }
-
-    .code-window-header .window-title {
-      margin-left: 8px;
-      color: #666;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-    }
-
-    .code-editor {
-      padding: 20px 24px;
-      overflow-x: auto;
-      font-family: 'Fira Code', 'Courier New', monospace;
-      font-size: 0.85rem;
-      line-height: 1.8;
-      color: #abb2bf;
-      min-height: 240px;
-      background: #0d0d0d;
-    }
-
-    .code-editor code {
-      font-family: 'Fira Code', 'Courier New', monospace;
-    }
-
-    .code-editor .code-keyword {
-      color: #c678dd;
-    }
-
-    .code-editor .code-function {
-      color: #61afef;
-    }
-
-    .code-editor .code-string {
-      color: #98c379;
-    }
-
-    .code-editor .code-tag {
-      color: #e06c75;
-    }
-
-    .code-editor .code-variable {
-      color: #e06c75;
-    }
-
-    .code-editor .code-operator {
-      color: #56b6c2;
-    }
-
-    .code-editor .code-comment {
-      color: #5c6370;
-    }
-
-    .code-editor .code-jsx {
-      color: #e5c07b;
-    }
-
-    /* ── Cursor blink ── */
-    .typing-cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1.1em;
-      background: #abb2bf;
-      margin-left: 2px;
-      vertical-align: text-bottom;
-      animation: blink 1s step-end infinite;
-    }
-
-    @keyframes blink {
-      0%,
-      100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 960px) {
-      #about .about-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
+    .stat-card .label {
+      font-size: 0.8rem;
+      color: #888;
+      font-weight: 400;
     }
 
     .exp-timeline {
@@ -795,6 +692,10 @@
         gap: 36px;
       }
 
+      .about-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .section-header.centered .section-sub {
         max-width: 100%;
       }
@@ -824,6 +725,19 @@
         margin: 0 auto;
       }
 
+      .about-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .stat-card {
+        padding: 16px;
+      }
+
+      .stat-card .number {
+        font-size: 1.4rem;
+      }
+
       .exp-timeline {
         padding-left: 20px;
       }
@@ -837,16 +751,6 @@
         width: 10px;
         height: 10px;
       }
-
-      .code-editor {
-        font-size: 0.7rem;
-        padding: 14px 16px;
-        min-height: 180px;
-      }
-
-      .code-window-header .window-title {
-        font-size: 0.65rem;
-      }
     }
 
     @media (max-width: 420px) {
@@ -857,12 +761,6 @@
       .hero-avatar-wrap {
         width: 140px;
         height: 140px;
-      }
-
-      .code-editor {
-        font-size: 0.6rem;
-        padding: 10px 12px;
-        min-height: 150px;
       }
     }
   </style>
@@ -907,22 +805,21 @@
     </div>
   </header>
 
-  <!-- ─── ABOUT ─── -->
+  <!-- ABOUT -->
   <section id="about" class="reveal">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">About</span>
-        <h2>Who I Am</h2>
-        <p class="section-sub">A quick look at my journey, values, and what drives me as a developer.</p>
+        <span class="section-label">
+          <h2>About</h2>
+        </span>
       </div>
 
       <div class="about-grid">
-        <!-- Text column -->
         <div class="about-text">
           <p>
-            I'm a <strong>developer</strong> driven by a passion for technology and coding. I'm constantly exploring how
+            I'm a <strong>developer</strong> driven by a passion for technology and coding. I’m constantly exploring how
             development can create real-world impact.
-            With curiosity and a commitment to continuous learning, I'm on a journey to build innovative, user‑friendly
+            With curiosity and a commitment to continuous learning, I’m on a journey to build innovative, user‑friendly
             solutions.
             My work spans both <strong>frontend</strong> and <strong>backend</strong> development, allowing me to
             transform ideas into complete, functional web applications.
@@ -934,20 +831,7 @@
           </p>
         </div>
 
-        <!-- Live Code column -->
-        <div class="about-code">
-          <div class="code-window">
-            <div class="code-window-header">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-              <span class="window-title">portfolio.jsx</span>
-            </div>
-            <div class="code-editor">
-              <pre style="margin:0; padding:0; background:transparent; border:none;"><code id="code-content"></code><span class="typing-cursor"></span></pre>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -998,6 +882,7 @@
         <div class="skills-label">Frontend</div>
         <div class="skills-row">
           <div class="skill-pill"><i class="devicon-react-original"></i> React</div>
+          <div class="skill-pill"><i class="devicon-laravel-plain"></i> Laravel</div>
           <div class="skill-pill"><i class="devicon-html5-plain"></i> HTML5</div>
           <div class="skill-pill"><i class="devicon-css3-plain"></i> CSS3</div>
         </div>
@@ -1007,7 +892,7 @@
         <div class="skills-label">Backend</div>
         <div class="skills-row">
           <div class="skill-pill"><i class="devicon-spring-plain"></i> Spring Boot</div>
-          <div class="skill-pill"><i class="devicon-dotnetcore-plain"></i> .NET Web API</div>
+          <div class="skill-pill"><i class="devicon-dotnetcore-plain"></i>API</div>
           <div class="skill-pill"><i class="devicon-json-plain"></i> JWT Auth</div>
         </div>
       </div>
@@ -1076,7 +961,7 @@
             <h3>HireHelper</h3>
             <div class="tech-tags">
               <span>Spring Boot</span><span>React</span><span>Spring Security</span><span>JWT</span><span>Fully
-                Functional DBMS</span>
+                Funtional DBMS</span>
             </div>
             <p>Connecting clients to local service providers in their area. Sign up & Administration Login.</p>
             <div class="project-links">
@@ -1094,11 +979,11 @@
           <div class="project-body">
             <h3>Task Management</h3>
             <div class="tech-tags">
-              <span>Laravel</span><span>PHP</span><span>Blade</span><span>Fully Functional DBMS</span>
+              <span>Laravel</span><span>PHP</span><span>Blade</span><span>Fully Funtional DBMS</span>
             </div>
             <p>Task management is an application for managing and assigning individual or organizational tasks
               efficiently.
-              Developed with Laravel Framework, Php Blade syntax & fully functional Database.</p>
+              Developed with Laravel Framework, Php Blade syntax & fully funtional Database.</p>
             <div class="project-links">
               <a href="https://github.com/Moegamat-Tauriq-Osman/Task-Management-App"
                 class="btn btn-small btn-outline">GitHub</a>
@@ -1114,7 +999,7 @@
           <div class="project-body">
             <h3>PawPoint</h3>
             <div class="tech-tags">
-              <span>Laravel</span><span>PHP</span><span>Blade</span><span>Fully Functional DBMS</span>
+              <span>Laravel</span><span>PHP</span><span>Blade</span><span>Fully Funtional DBMS</span>
             </div>
             <p>Feline service booking system tailored for feline needs. It features and Admin Dashboard to manage
               services, staff and customer bookings as well as a
@@ -1135,7 +1020,7 @@
             <div class="tech-tags">
               <span>React</span><span>JavaScript</span><span>Express.JS</span><span>E-commerce</span>
             </div>
-            <p>A web-based E-commerce application for fitness enthusiasts to shop for fitness products.
+            <p>A web-based E-commmerce application for fitness enthusiasts to shop for fitness products.
               It features an Admin Dashboard to manage products, categories and customer orders
             </p>
             <div class="project-links">
@@ -1144,6 +1029,7 @@
             </div>
           </div>
         </div>
+
 
         <div class="project">
           <div class="project-img">
@@ -1160,7 +1046,7 @@
             </div>
             <p>
               Designed and developed a modern tourism website showcasing authentic Cape
-              Malay cuisine and guided Woodstock street art experiences, featuring a
+              Malay cuisine and guided Woodstock street art experiences, which will featuring a
               responsive interface, engaging visuals and intuitive navigation. The Project is still being worked on.
             </p>
             <div class="project-links">
@@ -1170,6 +1056,7 @@
             </div>
           </div>
         </div>
+
 
         <div class="project">
           <div class="project-img">
@@ -1185,12 +1072,12 @@
               <span>Responsive Design</span>
             </div>
             <p>
-              Developed a tourism website for ZAYQH Collective, featuring a
+              Developed a tourism website for ZAYQH Collective, which will feature a
               modern, responsive user experience that highlights curated travel
               experiences, destinations and brand identity across South Africa. The Project is still being worked on.
             </p>
             <div class="project-links">
-              <a href="https://zayqhcollective.co.za" target="_blank" class="btn btn-small btn-outline">
+              <a href="https://zayqhcollective.co.za" target="_blank" class="btn btn-small">
                 Visit Live Website
               </a>
             </div>
@@ -1233,7 +1120,6 @@
 
   <!-- SCRIPTS -->
   <script>
-    // ── Reveal on scroll ──
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1243,36 +1129,6 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-
-    // ── Live Code Typing Effect ──
-    const codeSnippet = `<span class="code-keyword">const</span> <span class="code-function">Portfolio</span> = () => {<br>  <span class="code-keyword">return</span> (<br>    &lt;<span class="code-tag">div</span> <span class="code-variable">className</span>=<span class="code-string">"app"</span>&gt;<br>      &lt;<span class="code-tag">Header</span> /&gt;<br>      &lt;<span class="code-tag">About</span> /&gt;<br>      &lt;<span class="code-tag">Skills</span> /&gt;<br>      &lt;<span class="code-tag">Projects</span> /&gt;<br>      &lt;<span class="code-tag">Contact</span> /&gt;<br>    &lt;/<span class="code-tag">div</span>&gt;<br>  );<br>};`;
-
-    let charIndex = 0;
-    let isTypingComplete = false;
-    const codeElement = document.getElementById('code-content');
-
-    function typeCode() {
-      if (charIndex < codeSnippet.length) {
-        codeElement.innerHTML += codeSnippet.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeCode, 15);
-      } else {
-        isTypingComplete = true;
-      }
-    }
-
-    // ── Start typing when About section comes into view ──
-    const aboutObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !isTypingComplete) {
-          typeCode();
-          aboutObserver.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
-
-    const aboutCodeBlock = document.querySelector('.about-code');
-    if (aboutCodeBlock) aboutObserver.observe(aboutCodeBlock);
   </script>
 
 </body>
