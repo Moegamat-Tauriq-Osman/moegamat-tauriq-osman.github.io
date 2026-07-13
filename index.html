@@ -380,6 +380,22 @@
     }
 
     /* ── Skills ── */
+    .skills-block {
+      margin-top: 40px;
+    }
+    .skills-block:first-of-type { margin-top: 0; }
+
+    .skills-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #a78bfa;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      padding-bottom: 8px;
+    }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -629,41 +645,65 @@
     <div class="section-header">
       <span class="section-label">About</span>
       <h2>Who I Am</h2>
+      <p class="section-sub">A quick look at my journey, values, and what drives me as a developer.</p>
     </div>
 
     <div class="about-grid">
       <div class="about-text">
         <p>
-         I'm a <b>developer</b>, driven by a passion for technology and coding, I’m constantly exploring how development can create real-world impact.  
-      With curiosity and a commitment to continuous learning, I’m on a journey to build innovative, user-centered/friendly solutions.
-      My work spans both <b>frontend</b> and <b>backend</b> development, allowing me to transform ideas into complete, functional web applications.
+          I'm a <strong>developer</strong> driven by a passion for technology and coding. I’m constantly exploring how development can create real-world impact.
+          With curiosity and a commitment to continuous learning, I’m on a journey to build innovative, user‑friendly solutions.
+          My work spans both <strong>frontend</strong> and <strong>backend</strong> development, allowing me to transform ideas into complete, functional web applications.
         </p>
         <p>
-          I believe great software is built with intention — combining robust architecture with 
-          thoughtful user experience. I'm constantly exploring new tools and patterns to build 
+          I believe great software is built with intention — combining robust architecture with
+          thoughtful user experience. I'm constantly exploring new tools and patterns to build
           solutions that genuinely help people.
         </p>
       </div>
 
-<!-- ─── EXPERIENCE ─── -->
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="number">5+</span>
+          <span class="label">Projects Built</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">5</span>
+          <span class="label">Tech Stacks</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">2</span>
+          <span class="label">Years Learning</span>
+        </div>
+        <div class="stat-card">
+          <span class="number">∞</span>
+          <span class="label">Curiosity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─── (now a standalone section) -->
 <section id="experience" class="alt reveal">
   <div class="container">
     <div class="section-header centered">
-      <span class="section-label"><h2>Experience</h2></span>
+      <span class="section-label">Experience</span>
+      <h2>My Path So Far</h2>
+      <p class="section-sub">A timeline of the skills and knowledge I've built along the way.</p>
     </div>
 
     <div class="exp-timeline">
       <div class="exp-item">
         <span class="meta">2023 – 2025</span>
         <h3>Diploma in ICT Applications Development</h3>
-        <p>Successfully completed a Diploma in ICT Applications Development. Gained foundational knowledge of software engineering principles.
+        <p>
+          Successfully completed a Diploma in ICT Applications Development. Gained foundational knowledge of software engineering principles.
           Built client-server Java applications following common software design patterns.
           Worked with and implemented relational databases with SQL; practiced data modelling and queries.
           Worked with various frameworks like React, Laravel and Spring.
         </p>
       </div>
-
-
     </div>
   </div>
 </section>
@@ -671,50 +711,35 @@
 <!-- ─── SKILLS ─── -->
 <section id="skills" class="reveal">
   <div class="container">
-
     <div class="section-header centered">
       <span class="section-label">Skills</span>
       <h2>Tools & Technologies</h2>
-      <p class="section-sub">
-        Click any card to learn more about what I work with.
-      </p>
+      <p class="section-sub">Click any card to learn more about what I work with.</p>
     </div>
 
     <!-- Languages -->
     <div class="skills-block">
       <h3 class="skills-label">Languages</h3>
-
       <div class="skills-grid">
         <div class="skill-card" onclick="toggleSkill(this)">
           <i class="devicon-java-plain skill-icon"></i>
           <span class="skill-name">Java</span>
-          <span class="skill-desc">
-            Object-oriented programming, collections, multithreading and backend development.
-          </span>
+          <span class="skill-desc">OOP, collections, multithreading &amp; backend APIs.</span>
         </div>
-
         <div class="skill-card" onclick="toggleSkill(this)">
           <i class="devicon-javascript-plain skill-icon"></i>
           <span class="skill-name">JavaScript</span>
-          <span class="skill-desc">
-            Modern ES6+, asynchronous programming, DOM manipulation and APIs.
-          </span>
+          <span class="skill-desc">Modern ES6+, async, DOM manipulation &amp; APIs.</span>
         </div>
-
         <div class="skill-card" onclick="toggleSkill(this)">
           <i class="devicon-php-plain skill-icon"></i>
           <span class="skill-name">PHP</span>
-          <span class="skill-desc">
-            Server-side scripting and CRUD web applications.
-          </span>
+          <span class="skill-desc">Server-side scripting &amp; CRUD web apps.</span>
         </div>
-
         <div class="skill-card" onclick="toggleSkill(this)">
           <i class="devicon-mysql-plain skill-icon"></i>
           <span class="skill-name">SQL</span>
-          <span class="skill-desc">
-            Database design, complex queries and relational databases.
-          </span>
+          <span class="skill-desc">Database design, complex queries &amp; optimisation.</span>
         </div>
       </div>
     </div>
@@ -722,30 +747,21 @@
     <!-- Frontend -->
     <div class="skills-block">
       <h3 class="skills-label">Frontend</h3>
-
       <div class="skills-grid">
         <div class="skill-card" onclick="toggleSkill(this)">
           <i class="devicon-react-original skill-icon"></i>
           <span class="skill-name">React</span>
-          <span class="skill-desc">
-            Building modern component-based user interfaces with hooks and state.
-          </span>
+          <span class="skill-desc">Component‑based UIs with hooks &amp; state.</span>
         </div>
-
         <div class="skill-card" onclick="toggleSkill(this)">
           <i class="devicon-html5-plain skill-icon"></i>
           <span class="skill-name">HTML5</span>
-          <span class="skill-desc">
-            Semantic, accessible and SEO-friendly markup.
-          </span>
+          <span class="skill-desc">Semantic, accessible markup.</span>
         </div>
-
         <div class="skill-card" onclick="toggleSkill(this)">
           <i class="devicon-css3-plain skill-icon"></i>
           <span class="skill-name">CSS3</span>
-          <span class="skill-desc">
-            Responsive layouts using Flexbox, Grid and modern CSS.
-          </span>
+          <span class="skill-desc">Flexbox, Grid &amp; responsive layouts.</span>
         </div>
       </div>
     </div>
@@ -753,56 +769,31 @@
     <!-- Backend -->
     <div class="skills-block">
       <h3 class="skills-label">Backend</h3>
-
       <div class="skills-grid">
         <div class="skill-card" onclick="toggleSkill(this)">
           <i class="devicon-spring-plain skill-icon"></i>
           <span class="skill-name">Spring Boot</span>
-          <span class="skill-desc">
-            REST APIs, authentication and enterprise Java applications.
-          </span>
+          <span class="skill-desc">REST APIs, security &amp; enterprise apps.</span>
         </div>
-
         <div class="skill-card" onclick="toggleSkill(this)">
           <i class="devicon-laravel-plain skill-icon"></i>
           <span class="skill-name">Laravel</span>
-          <span class="skill-desc">
-            MVC architecture, routing, authentication and Eloquent ORM.
-          </span>
+          <span class="skill-desc">MVC, Eloquent ORM &amp; authentication.</span>
         </div>
       </div>
     </div>
 
-    <!-- Database -->
+    <!-- Design & Tools -->
     <div class="skills-block">
-      <h3 class="skills-label">Database</h3>
-
-      <div class="skills-grid">
-        <div class="skill-card" onclick="toggleSkill(this)">
-          <i class="devicon-mysql-plain skill-icon"></i>
-          <span class="skill-name">MySQL</span>
-          <span class="skill-desc">
-            Database design, indexing and efficient data management.
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tools -->
-    <div class="skills-block">
-      <h3 class="skills-label">Tools & Design</h3>
-
+      <h3 class="skills-label">Design &amp; Tools</h3>
       <div class="skills-grid">
         <div class="skill-card" onclick="toggleSkill(this)">
           <i class="fa-brands fa-figma skill-icon"></i>
           <span class="skill-name">Figma</span>
-          <span class="skill-desc">
-            UI/UX design, wireframes and interactive prototypes.
-          </span>
+          <span class="skill-desc">UI/UX design, wireframes &amp; prototypes.</span>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
